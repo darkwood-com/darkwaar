@@ -1,4 +1,4 @@
-service: demo
+service: darkwaar
 
 provider:
   name: aws
