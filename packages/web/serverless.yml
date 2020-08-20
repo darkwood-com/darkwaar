@@ -93,16 +93,15 @@ resources:
             ViewerProtocolPolicy: redirect-to-https
             Compress: true # Serve files with gzip for browsers that support it (https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/ServingCompressedFiles.html)
           # When using a custom domain, uncomment the configuration below:
-          #Aliases:
-          #    - example.com # our custom domain
-          #    # It is also possible to add multiple domain names for the same website
-          #ViewerCertificate:
-          #    # ARN of the certificate created in ACM
-          #    # The ARN should look like this: 'arn:aws:acm:us-east-1:116536346254:certificate/322f12ee-1165-4bfa-a41f-08c932a2935d'
-          #    AcmCertificateArn: <certificate-arn>
-          #    # See https://docs.aws.amazon.com/fr_fr/cloudfront/latest/APIReference/API_ViewerCertificate.html
-          #    SslSupportMethod: 'sni-only'
-          #    MinimumProtocolVersion: TLSv1.1_2016
+          Aliases:
+              - darkwaar.com
+          ViewerCertificate:
+              # ARN of the certificate created in ACM
+              # The ARN should look like this: 'arn:aws:acm:us-east-1:116536346254:certificate/322f12ee-1165-4bfa-a41f-08c932a2935d'
+              AcmCertificateArn: arn:aws:acm:us-east-1:094932445011:certificate/a6f9e4f3-b691-4817-b34a-4100b94fe51a
+              # See https://docs.aws.amazon.com/fr_fr/cloudfront/latest/APIReference/API_ViewerCertificate.html
+              SslSupportMethod: 'sni-only'
+              MinimumProtocolVersion: TLSv1.1_2016
 
   Outputs:
     StaticWebsiteBucket:
