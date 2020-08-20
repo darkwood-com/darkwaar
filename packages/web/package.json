@@ -1,0 +1,15 @@
+{
+  "name": "web",
+  "version": "0.0.1",
+  "description": "web",
+  "author": "Mathieu Ledru <matyo91@gmail.com>",
+  "homepage": "https://darkwaar.com",
+  "license": "CC BY-NC-ND",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/darkwood-fr/darkwaar.git"
+  },
+  "bugs": {
+    "url": "https://github.com/darkwood-fr/darkwaar/issues"
+  }
+}
