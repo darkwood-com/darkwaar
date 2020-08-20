@@ -5,7 +5,7 @@
 @tailwind components;
 
 .font-quote {
-    font-family: 'IM Fell English', serif;
+  font-family: 'IM Fell English', serif;
 }
 
 @tailwind utilities;
