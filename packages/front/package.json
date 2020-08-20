@@ -4,12 +4,12 @@
   "description": "Darkwaar front",
   "author": {
     "name": "Mathieu Ledru",
-    "email": "matyo@darkwaar.com"
+    "email": "contact@darkwaar.com"
   },
   "bugs": {
     "url": "https://github.com/darkwaar-com/darkwaar/issues"
   },
-  "homepage": "https://github.com/darkwaar-com/darkwaar/tree/master/library/darkwaar-client#readme",
+  "homepage": "https://github.com/darkwaar-com/darkwaar/tree/master/library/darkwaar-front#readme",
   "keywords": [
     "darkwaar",
     "darkwaar-front"
@@ -18,7 +18,7 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/darkwaar-com/darkwaar.git",
-    "directory": "library/darkwaar-client"
+    "directory": "library/darkwaar-front"
   },
   "publishConfig": {
     "access": "public"
@@ -31,14 +31,14 @@
   ],
   "oclif": {
     "commands": "./dist/commands",
-    "bin": "darkwaar-client"
+    "bin": "darkwaar-front"
   },
-  "bin": "./bin/darkwaar-client",
+  "bin": "./bin/darkwaar-front",
   "scripts": {
     "prepack": "make build",
     "start": "run-script-os",
-    "start:default": "cd bin && ./darkwaar-client",
-    "start:windows": "cd bin && darkwaar-client"
+    "start:default": "cd bin && ./darkwaar-front",
+    "start:windows": "cd bin && darkwaar-front"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.26",

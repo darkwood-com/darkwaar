@@ -10,8 +10,8 @@ export class Start extends Command {
   static description = 'Starts darkwaar client.';
 
   static examples = [
-    `$ darkwaar-client start`,
-    `$ darkwaar-client start -o`,
+    `$ darkwaar-front start`,
+    `$ darkwaar-front start -o`,
   ];
 
   static flags = {

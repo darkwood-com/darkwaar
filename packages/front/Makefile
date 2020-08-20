@@ -18,7 +18,7 @@ dev: ## dev
 	GATSBY_ACTIVE_ENV=development $(NPM_BIN)/gatsby develop -p 8090
 
 serve: build ## serve
-	./bin/darkwaar-client
+	./bin/darkwaar-front
 
 # DEFAULT
 .DEFAULT_GOAL := help

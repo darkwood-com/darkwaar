@@ -1,7 +1,7 @@
 import React from 'react'
 import { combineReducers } from 'redux'
 import { Provider } from 'react-redux'
-import { app, auth, env, feed, logs, rail, user } from './reducers'
+import { app, auth, env, logs, user } from './reducers'
 import { createStore } from './utils'
 import { commitLoginUserSuccess } from './reducers/auth/actions'
 import { commitSetEnv } from './reducers/env/actions'
@@ -11,9 +11,7 @@ let store = createStore(
     app,
     auth,
     env,
-    feed,
     logs,
-    rail,
     user,
   })
 )

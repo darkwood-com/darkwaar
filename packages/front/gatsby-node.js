@@ -231,11 +231,6 @@ const replacePath = _path => (_path === `/` ? _path : _path.replace(/\/$/, ``))
 exports.onCreatePage = ({ page, actions }) => {
     const { createPage, deletePage } = actions
 
-    if (page.path.startsWith(`/feed`)) {
-        page.matchPath = `/*`
-        createPage(page)
-    }
-
     return new Promise(resolve => {
         const oldPage = Object.assign({}, page)
         page.path = replacePath(page.path)

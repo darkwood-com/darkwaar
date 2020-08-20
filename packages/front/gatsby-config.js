@@ -19,12 +19,6 @@ module.exports = {
         'Mdx.frontmatter.author': 'ContributorsYaml.name'
     },
     plugins: [
-        {
-            resolve: `gatsby-source-npm-package-search`,
-            options: {
-                keywords: [`darkwaar-client`, `darkwaar-flow`],
-            },
-        },
         `gatsby-plugin-sass`,
         'gatsby-plugin-react-helmet',
         {
