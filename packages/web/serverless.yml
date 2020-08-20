@@ -3,10 +3,12 @@ service: darkwaar
 provider:
   name: aws
   runtime: provided
+  region: eu-west-3
   httpApi:
     # Enable CORS for our API, from all domains, so that it can be called from our frontend app
     # More details here: https://www.serverless.com/framework/docs/providers/aws/events/http-api/
     cors: true
+    payload: "2.0"
   environment:
     # Environment variables for Laravel
     APP_ENV: production
