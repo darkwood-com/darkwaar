@@ -124,13 +124,6 @@ class Header extends Component {
       return 'home'
     } else if (
       matchPath(location.pathname, {
-        path: routes.flows.path,
-        exact: true,
-      })
-    ) {
-      return 'flows'
-    } else if (
-      matchPath(location.pathname, {
         path: routes.doc.path,
         exact: true,
       })
@@ -170,16 +163,6 @@ class Header extends Component {
       })
     ) {
       return 'blog'
-    } else if (
-      matchPath(location.pathname, {
-        path: routes.library.path,
-        exact: true,
-      }) ||
-      matchPath(location.pathname, {
-        path: routes.card.path,
-      })
-    ) {
-      return 'library'
     } else if (
       matchPath(location.pathname, {
         path: routes.changelog.path,
@@ -254,50 +237,6 @@ class Header extends Component {
 
           <div className="navbar-nav-scroll d-none d-md-flex">
             <ul className="navbar-nav bd-navbar-nav flex-row">
-              <li className="nav-item">
-                <Link
-                  className={`nav-link${active === 'flows' ? ' active' : ''}`}
-                  to={pathTo('flows')}
-                >
-                  Flows
-                </Link>
-              </li>
-              {auth.isAuthenticated &&
-                isGranted(user, 'ROLE_USER') &&
-                user.username === null && (
-                  <li className="nav-item">
-                    <Link
-                      className={`nav-link${
-                        active === 'dashboard' ? ' active' : ''
-                      }`}
-                      to={pathTo('feed')}
-                    >
-                      Dashboard
-                    </Link>
-                  </li>
-                )}
-              {auth.isAuthenticated &&
-                isGranted(user, 'ROLE_USER') &&
-                user.username !== null && (
-                  <li className="nav-item">
-                    <Link
-                      className={`nav-link${
-                        active === 'dashboard' ? ' active' : ''
-                      }`}
-                      to={pathTo('userFeed', { username: user.username })}
-                    >
-                      Dashboard
-                    </Link>
-                  </li>
-                )}
-              <li className="nav-item">
-                <Link
-                  className={`nav-link${active === 'library' ? ' active' : ''}`}
-                  to={pathTo('library')}
-                >
-                  Library
-                </Link>
-              </li>
               <li className="nav-item">
                 <Link
                   className={`nav-link${active === 'doc' ? ' active' : ''}`}
@@ -461,50 +400,6 @@ class Header extends Component {
           </ul>
         </header>
         <ul className="nav nav-bar-bottom fixed-bottom justify-content-center d-flex d-md-none">
-          <li className="nav-item">
-            <Link
-              className={`nav-link${active === 'flows' ? ' active' : ''}`}
-              to={pathTo('flows')}
-            >
-              Flows
-            </Link>
-          </li>
-          {auth.isAuthenticated &&
-            isGranted(user, 'ROLE_USER') &&
-            user.username === null && (
-              <li className="nav-item">
-                <Link
-                  className={`nav-link${
-                    active === 'dashboard' ? ' active' : ''
-                  }`}
-                  to={pathTo('feed')}
-                >
-                  Dashboard
-                </Link>
-              </li>
-            )}
-          {auth.isAuthenticated &&
-            isGranted(user, 'ROLE_USER') &&
-            user.username !== null && (
-              <li className="nav-item">
-                <Link
-                  className={`nav-link${
-                    active === 'dashboard' ? ' active' : ''
-                  }`}
-                  to={pathTo('userFeed', { username: user.username })}
-                >
-                  Dashboard
-                </Link>
-              </li>
-            )}
-          <li className="nav-item">
-            <Link
-              className={`nav-link${active === 'library' ? ' active' : ''}`}
-              to={pathTo('library')}
-            >
-              Library
-            </Link>
-          </li>
           <li className="nav-item">
             <Link
               className={`nav-link${active === 'doc' ? ' active' : ''}`}

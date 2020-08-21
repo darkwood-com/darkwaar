@@ -1,7 +1,6 @@
 const {createFilePath} = require(`gatsby-source-filesystem`)
 const _ = require('lodash')
 const fs = require('fs')
-const localPackages = '../'
 const activeEnv = process.env.GATSBY_ACTIVE_ENV || process.env.NODE_ENV || 'development'
 
 console.log(`Using environment config: '${activeEnv}'`)
@@ -28,64 +27,6 @@ exports.onCreateWebpackConfig = ({stage, loaders, actions}) => {
     }
 
     actions.setWebpackConfig(config)
-}
-
-exports.sourceNodes = async ({
-     actions,
-     createNodeId,
-     createContentDigest
- }, {
-     keywords
- }) => {
-    const {
-        createNode
-    } = actions;
-
-    fs.readdirSync(localPackages)
-        .filter(file => {
-            return fs.existsSync(`${localPackages}/${file}/package.json`)
-        })
-        .forEach(file => {
-            const readme = fs.readFileSync(`${localPackages}/${file}/README.md`, 'utf8')
-            const packageJson = JSON.parse(fs.readFileSync(`${localPackages}/${file}/package.json`, 'utf8'))
-            const parentId = createNodeId(`card ${file}`);
-            
-            if(!packageJson.keywords || !packageJson.keywords.reduce((hasCatalogList, keyword) => {
-              return hasCatalogList || keyword.indexOf('darkwaar-') === 0
-            }, false)) {
-              return
-            }
-
-            const readmeNode = {
-                id: createNodeId(`readme ${file}`),
-                parent: parentId,
-                children: [],
-                internal: {
-                    type: `NPMLocalPackageReadme`,
-                    mediaType: `text/markdown`,
-                    content: readme,
-                }
-            };
-            readmeNode.internal.contentDigest = createContentDigest(readmeNode);
-
-            const node = Object.assign({}, packageJson, {
-                id: parentId,
-                parent: null,
-                children: [],
-                slug: packageJson.name,
-                readme___NODE: readmeNode.id,
-                title: packageJson.name,
-                description: packageJson.description,
-                internal: {
-                    type: `NPMLocalPackage`,
-                    content: readme,
-                }
-            });
-            node.internal.contentDigest = createContentDigest(node);
-
-            createNode(readmeNode);
-            createNode(node);
-        })
 }
 
 exports.onCreateNode = ({node, getNode, actions}) => {
@@ -115,26 +56,6 @@ exports.onCreateNode = ({node, getNode, actions}) => {
           name: `slug`,
           value: slug,
         })
-    } else if (node.internal.type === `NPMPackage` || node.internal.type === `NPMLocalPackage`) {
-        const slug = _.kebabCase(node.name)
-        createNodeField({
-            node,
-            name: `slug`,
-            value: slug,
-        })
-
-        const catalogs = node.keywords.reduce((catalogList, keyword) => {
-            if(keyword.indexOf('darkwaar-') === 0) {
-                catalogList.push(keyword.slice(8))
-            }
-
-            return catalogList
-        }, [])
-        createNodeField({
-            node,
-            name: `catalogs`,
-            value: catalogs,
-        })
     }
 }
 
@@ -163,6 +84,29 @@ exports.createPages = async ({graphql, actions, reporter}) => {
           }
         }
       }
+      docs: allMdx(
+        filter: {fields: {sourceName: {eq: "doc"}}}
+      ) {
+        nodes {
+          id
+          fields {
+            slug
+          }
+          frontmatter {
+            title
+          }
+        }
+      }
+      docNav: allDocsYaml
+      {
+        nodes {
+          title
+          items {
+            link
+            title
+          }
+        }
+      }
     }
     `)
 
@@ -172,7 +116,37 @@ exports.createPages = async ({graphql, actions, reporter}) => {
 
     const {
         articles,
+        docNav,
+        docs,
     } = result.data
+    const docsBySlug = docs.nodes.reduce((value, doc) => {
+        value[`/docs${doc.fields.slug ? '/' + doc.fields.slug : ''}`] = doc
+        return value
+    }, {})
+
+    const docItems = docNav.nodes.reduce((value, docSection) => {
+        docSection.items.forEach((docItem) => {
+            const slug = docItem.link
+            const doc = docsBySlug[slug]
+            if(doc !== undefined) {
+                value.push(doc)
+            }
+        })
+        return value
+    }, [])
+    docItems.forEach((doc, index) => {
+        const previous = index === 0 ? null : docItems[index - 1]
+        const next = index === docItems.length - 1 ? null : docItems[index + 1]
+        createPage({
+            path: `/docs${doc.fields.slug ? '/' + doc.fields.slug : ''}`,
+            component: require.resolve("./src/templates/doc.js"),
+            context: {
+                ...doc,
+                previous,
+                next,
+            },
+        })
+    })
 
     const tags = {}
     const contributorSet = new Set()

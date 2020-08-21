@@ -4,12 +4,8 @@ import {
   Blog,
   Contact,
   Contributor,
-  Card,
-  Library,
   Doc,
-  Feed,
   Home,
-  Flows,
   Login,
   FacebookLogin,
   GithubLogin,
@@ -50,10 +46,6 @@ const routes = {
     exact: true,
     component: Register,
   },
-  flows: {
-    path: '/flows',
-    component: Flows,
-  },
   contact: {
     path: '/contact',
     component: Contact,
@@ -86,14 +78,6 @@ const routes = {
     path: '/blog',
     component: Blog,
   },
-  card: {
-    path: '/library/:slug',
-    component: Card,
-  },
-  library: {
-    path: '/library',
-    component: Library,
-  },
   settings: {
     path: '/settings',
     component: requireAuthentication(Settings),
@@ -101,14 +85,6 @@ const routes = {
   admin: {
     path: '/admin',
     component: requireAuthentication(Admin, 'ROLE_SUPER_ADMIN'),
-  },
-  feed: {
-    path: '/me/feed/:slug1?/:slug2?/:slug3?/:slug4?/:slug5?',
-    component: requireAuthentication(Feed),
-  },
-  userFeed: {
-    path: '/:username/feed/:slug1?/:slug2?/:slug3?/:slug4?/:slug5?',
-    component: Feed,
   },
 }
 

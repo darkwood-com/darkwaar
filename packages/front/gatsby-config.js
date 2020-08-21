@@ -12,7 +12,7 @@ module.exports = {
     siteMetadata: {
         title: `Darkwaar`,
         siteUrl: `https://darkwaar.com`,
-        description: `Will you be the darkest one at waar ?`,
+        description: `Unified Workflow Automation Tool`,
         twitter: `@darkwaar`,
     },
     mapping: {
@@ -179,6 +179,20 @@ module.exports = {
             options: {
                 path: `${docsPath}/changelog.yaml`,
                 name: 'changelog',
+            },
+        },
+        {
+            resolve: `gatsby-source-filesystem`,
+            options: {
+                path: `${docsPath}/docs.yaml`,
+                name: 'doc',
+            },
+        },
+        {
+            resolve: `gatsby-source-filesystem`,
+            options: {
+                path: `${docsPath}/docs`,
+                name: 'doc',
             },
         },
         {
