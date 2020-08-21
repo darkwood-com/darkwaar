@@ -1,5 +1,13 @@
 service: darkwaar
 
+custom:
+  preprod:
+    domain: darkwaar.com
+  prod:
+    domain: preprod.darkwaar.com
+  dev:
+    domain: dev.darkwaar.com
+
 provider:
   name: aws
   runtime: provided
@@ -94,14 +102,14 @@ resources:
             Compress: true # Serve files with gzip for browsers that support it (https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/ServingCompressedFiles.html)
           # When using a custom domain, uncomment the configuration below:
           Aliases:
-              - darkwaar.com
+            - ${self:custom.${opt:stage}.domain}
           ViewerCertificate:
-              # ARN of the certificate created in ACM
-              # The ARN should look like this: 'arn:aws:acm:us-east-1:116536346254:certificate/322f12ee-1165-4bfa-a41f-08c932a2935d'
-              AcmCertificateArn: arn:aws:acm:us-east-1:094932445011:certificate/a6f9e4f3-b691-4817-b34a-4100b94fe51a
-              # See https://docs.aws.amazon.com/fr_fr/cloudfront/latest/APIReference/API_ViewerCertificate.html
-              SslSupportMethod: 'sni-only'
-              MinimumProtocolVersion: TLSv1.1_2016
+            # ARN of the certificate created in ACM
+            # The ARN should look like this: 'arn:aws:acm:us-east-1:116536346254:certificate/322f12ee-1165-4bfa-a41f-08c932a2935d'
+            AcmCertificateArn: arn:aws:acm:us-east-1:094932445011:certificate/13bde851-c131-4e58-87cc-889cb2bb3fe6
+            # See https://docs.aws.amazon.com/fr_fr/cloudfront/latest/APIReference/API_ViewerCertificate.html
+            SslSupportMethod: 'sni-only'
+            MinimumProtocolVersion: TLSv1.1_2016
 
   Outputs:
     StaticWebsiteBucket:
