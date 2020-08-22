@@ -1,3 +1,3 @@
-This project is an example of a PHP [Laravel](https://laravel.com/) API.
+# darkwaar-api
 
-In order to run Laravel easily on Lambda, we are using [Bref's Laravel bridge](https://bref.sh/docs/frameworks/laravel.html).
+This is official Darkwaar Api for Darkwaar
