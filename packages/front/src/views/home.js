@@ -57,91 +57,12 @@ const Home = () => {
         <section className="section container vh-100">
           <div className="row h-100 align-items-center">
             <div className="col-md-12 text-center">
-              <h1>Unified Workflow Automation Tool</h1>
-              <p>Take advantage of Railway Flow Based Programming to automate your recurring tasks.</p>
+              <h1>Darkwaar</h1>
+              <p>Will you be the darkest one at waar ?</p>
             </div>
           </div>
         </section>
       </div>
-      <section className="section container">
-        <div className="row py-5">
-          <div className="col-lg-12 text-center">
-            <h3>Features</h3>
-          </div>
-        </div>
-        <div className="row">
-          <div className="col-lg-4 py-md-5">
-            <h3>Note taking philosophy</h3>
-            <p>Create your Flows as you take note.</p>
-          </div>
-          <div className="col-lg-4 py-md-5">
-            <h3>Modulable</h3>
-            <p>Create your own specific Flows.</p>
-          </div>
-          <div className="col-lg-4 py-md-5">
-            <h3>Multiple clients</h3>
-            <p>Run your Flows on dedicated Clients.</p>
-          </div>
-          <div className="col-lg-4 py-md-5">
-            <h3>Free and Open</h3>
-            <p>Darkwaar is MIT open sourced.</p>
-          </div>
-          <div className="col-lg-4 py-md-5">
-            <h3>Control your data</h3>
-            <p>Install and run Darkwaar locally.</p>
-          </div>
-          <div className="col-lg-4 py-md-5">
-            <h3>Community</h3>
-            <p>Get inspiration from community.</p>
-          </div>
-        </div>
-      </section>
-      {/*<section className="section container py-md-5">
-        <div className="row">
-          <div className="col-lg-12">
-            <h3>Get started</h3>
-          </div>
-        </div>
-        <div className="row pt-md-3">
-          <div className="col-lg-6">
-            <h3 className="headline">CLI</h3>
-            <div className="execution-code cli-npx">
-              <div className="click-to-copy clickable">
-                Click to copy
-              </div>
-              <pre className="clickable  language-bash">
-                <code className=" language-bash">
-                  <span className="token comment"># Take darkwaar for a spin without installing it</span> npx darkwaar-com
-                </code>
-              </pre>
-            </div>
-            <div className="execution-code cli-npm-install">
-              <div className="click-to-copy clickable">
-                Click to copy
-              </div>
-              <pre className="clickable  language-bash"><code className=" language-bash">
-<span className="token comment"># or install it globally and then start</span>
-<span className="token function">npm</span> <span className="token function">install</span> -g darkwaar-com</code></pre>
-            </div>
-          </div>
-          <div className="col-lg-6">
-            <h3 className="headline">Docker</h3>
-            <div className="execution-code docker">
-              <div className="click-to-copy clickable">
-                Click to copy
-              </div>
-              <pre className="clickable language-bash"><code className=" language-bash">
-<span className="token comment"># Spin up a basic container</span>
-docker run -it --rm <span className="token punctuation">\</span>
---name n8n <span className="token punctuation">\</span>
--p <span className="token number">5678</span>:5678 <span className="token punctuation">\</span>
--v ~/.n8n:/root/.n8n <span className="token punctuation">\</span>
-n8nio/n8n
-              </code></pre>
-            </div>
-          </div>
-        </div>
-      </section>*/}
     </>
   )
 }

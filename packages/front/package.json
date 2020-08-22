@@ -4,12 +4,12 @@
   "description": "Darkwaar client",
   "author": {
     "name": "Mathieu Ledru",
-    "email": "contact@darkwaar.com"
+    "email": "matyo91@gmail.com"
   },
   "bugs": {
-    "url": "https://github.com/darkwaar-com/darkwaar/issues"
+    "url": "https://github.com/darkwood-fr/darkwaar/issues"
   },
-  "homepage": "https://github.com/darkwaar-com/darkwaar/tree/master/library/darkwaar-front#readme",
+  "homepage": "https://github.com/darkwood-fr/darkwaar/tree/master/library/darkwaar-front#readme",
   "keywords": [
     "darkwaar",
     "darkwaar-front"
@@ -17,7 +17,7 @@
   "license": "CC BY-NC-ND",
   "repository": {
     "type": "git",
-    "url": "https://github.com/darkwaar-com/darkwaar.git",
+    "url": "https://github.com/darkwood-fr/darkwaar.git",
     "directory": "library/darkwaar-front"
   },
   "publishConfig": {

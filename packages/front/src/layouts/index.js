@@ -292,7 +292,7 @@ class Header extends Component {
             <li className="nav-item">
               <a
                 className="nav-link"
-                href="https://github.com/darkwaar-com/darkwaar"
+                href="https://github.com/darkwood-fr/darkwaar"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="GitHub"
@@ -303,7 +303,7 @@ class Header extends Component {
             <li className="nav-item">
               <a
                 className="nav-link"
-                href="https://twitter.com/darkwaar_io"
+                href="https://twitter.com/darkwaar"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Twitter"
@@ -314,9 +314,7 @@ class Header extends Component {
             <li className="nav-item">
               <a
                 className="nav-link"
-                href="https://twitter.com/darkwaar_io"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="#"
                 aria-label="Theme"
                 onClick={this.onChangeTheme}
               >

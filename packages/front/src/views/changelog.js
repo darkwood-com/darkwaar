@@ -30,10 +30,10 @@ class Changelog extends Component {
                       <a
                         href={
                           items[index + 1]
-                            ? `https://github.com/darkwaar-com/darkwaar/compare/${
+                            ? `https://github.com/darkwood-fr/darkwaar/compare/${
                                 items[index + 1].node.tag
                               }...${items[index].node.tag}`
-                            : `https://github.com/darkwaar-com/darkwaar/releases/tag/${item.node.tag}`
+                            : `https://github.com/darkwood-fr/darkwaar/releases/tag/${item.node.tag}`
                         }
                         target="_blank"
                         rel="noopener noreferrer"

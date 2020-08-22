@@ -12,7 +12,7 @@ module.exports = {
     siteMetadata: {
         title: `Darkwaar`,
         siteUrl: `https://darkwaar.com`,
-        description: `Unified Workflow Automation Tool`,
+        description: `Will you be the darkest one at waar ?`,
         twitter: `@darkwaar`,
     },
     mapping: {
