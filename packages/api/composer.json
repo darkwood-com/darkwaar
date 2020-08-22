@@ -1,6 +1,6 @@
 {
     "type": "project",
-    "license": "Commons Clause + MIT",
+    "license": "CC BY-NC-ND",
     "require": {
         "php": "^7.2.5",
         "ext-ctype": "*",

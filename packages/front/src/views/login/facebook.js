@@ -19,7 +19,7 @@ class FacebookLogin extends Component {
       .then(() => {
         if (this.props.auth.isAuthenticated) {
           if (typeof window !== `undefined`) {
-            return navigate(pathTo('feed'))
+            return navigate(pathTo('settings'))
           }
         } else {
           this.props.dispatch(commitAddLog(this.props.auth.statusText))

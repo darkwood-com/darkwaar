@@ -27,7 +27,7 @@ class UserController extends AbstractController
     }
 
     /**
-     * @Route("/api/user/getSettings", name="api_user_get_settings", methods={"GET"})
+     * @Route("/api/user/get-settings", name="api_user_get_settings", methods={"GET"})
      */
     public function getSettings(Request $request): JsonResponse
     {
@@ -41,7 +41,7 @@ class UserController extends AbstractController
     }
 
     /**
-     * @Route("/api/user/setSettings", name="api_user_set_settings", methods={"PUT"})
+     * @Route("/api/user/set-settings", name="api_user_set_settings", methods={"PUT"})
      */
     public function setSettings(Request $request): JsonResponse
     {

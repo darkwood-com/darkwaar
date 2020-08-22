@@ -28,7 +28,7 @@ class ConfigController extends AbstractController
     }
 
     /**
-     * @Route("/api/config/getConfig", name="api_config_get", methods={"GET"})
+     * @Route("/api/config/get-config", name="api_config_get", methods={"GET"})
      */
     public function getConfig(Request $request): JsonResponse
     {
@@ -47,7 +47,7 @@ class ConfigController extends AbstractController
     }
 
     /**
-     * @Route("/api/config/setConfig", name="api_config_set", methods={"PUT"})
+     * @Route("/api/config/set-config", name="api_config_set", methods={"PUT"})
      */
     public function setConfig(Request $request): JsonResponse
     {

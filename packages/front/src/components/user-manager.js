@@ -26,11 +26,7 @@ class UserManager extends Component {
   onFetchUser = token => {
     Promise.all([
       this.props.dispatch(fetchSettings(token)),
-    ]).then(() => {
-      const { location } = this.props
-
-      this.onLocation(location)
-    })
+    ])
   }
 
   render() {

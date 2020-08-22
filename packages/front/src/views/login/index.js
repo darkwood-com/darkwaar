@@ -33,7 +33,7 @@ class Login extends Component {
       .dispatch(login(this.state.username, this.state.password))
       .then(() => {
         if (this.props.auth.isAuthenticated) {
-          return navigate(pathTo('feed'))
+          return navigate(pathTo('settings'))
         } else {
           return this.props.dispatch(commitAddLog(this.props.auth.statusText))
         }

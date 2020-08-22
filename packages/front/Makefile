@@ -15,7 +15,7 @@ clean: ## clean
 	rm -rf .cache dist public
 
 dev: ## dev
-	GATSBY_ACTIVE_ENV=development $(NPM_BIN)/gatsby develop -p 8090
+	GATSBY_ACTIVE_ENV=development $(NPM_BIN)/gatsby develop -p 8090 --https
 
 serve: build ## serve
 	./bin/darkwaar-front

@@ -17,7 +17,7 @@ class GithubLogin extends Component {
     this.props.dispatch(githubLogin(code, this.props.auth.token)).then(() => {
       if (this.props.auth.isAuthenticated) {
         if (typeof window !== `undefined`) {
-          return navigate(pathTo('feed'))
+          return navigate(pathTo('settings'))
         }
       } else {
         this.props.dispatch(commitAddLog(this.props.auth.statusText))
