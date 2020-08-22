@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { faFacebookF, faGithub } from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faClipboard } from '@fortawesome/free-regular-svg-icons'
 import { facebookLoginUrl, githubLoginUrl } from '../reducers/auth/actions'
 import { updateSettings, commitUpdateSettings } from '../reducers/user/actions'
 import { copyTextToClipboard } from '../utils'
@@ -175,6 +174,7 @@ class Settings extends Component {
               />
             </div>
           </div>
+          {env.facebookAppId && (
           <div className="form-group row">
             <label
               htmlFor="settings_username"
@@ -200,6 +200,8 @@ class Settings extends Component {
               )}
             </div>
           </div>
+          )}
+          {env.githubAppId && (
           <div className="form-group row">
             <label
               htmlFor="settings_username"
@@ -222,6 +224,7 @@ class Settings extends Component {
               )}
             </div>
           </div>
+          )}
           <div className="form-group row">
             <label
               htmlFor="settings_apiKey"
@@ -246,32 +249,6 @@ class Settings extends Component {
                   id="settings_apiKey"
                   value={user.apiKey || ''}
                   onChange={this.onUpdateApiKey}
-                  placeholder="api key"
-                />
-              </div>
-            </div>
-          </div>
-          <div className="form-group row">
-            <label htmlFor="settings_key" className="col-sm-2 col-form-label">
-              Api usage
-            </label>
-            <div className="col-sm-10">
-              <div className="input-group">
-                <div className="input-group-prepend">
-                  <button
-                    type="button"
-                    className="input-group-text"
-                    onClick={this.onCopyApiUsage}
-                  >
-                    <FontAwesomeIcon icon={faClipboard} />
-                  </button>
-                </div>
-                <input
-                  type="text"
-                  className="form-control"
-                  id="settings_key"
-                  value={clipboard || ''}
-                  readOnly
                   placeholder="api key"
                 />
               </div>
