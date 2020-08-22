@@ -188,15 +188,6 @@ class Header extends Component {
       })
     ) {
       return 'login'
-    } else if (
-      matchPath(location.pathname, {
-        path: routes.feed.path,
-      }) ||
-      matchPath(location.pathname, {
-        path: routes.userFeed.path,
-      })
-    ) {
-      return 'dashboard'
     }
 
     return null

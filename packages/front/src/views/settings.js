@@ -4,7 +4,6 @@ import { faFacebookF, faGithub } from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { facebookLoginUrl, githubLoginUrl } from '../reducers/auth/actions'
 import { updateSettings, commitUpdateSettings } from '../reducers/user/actions'
-import { copyTextToClipboard } from '../utils'
 
 class Settings extends Component {
   state = {
@@ -96,25 +95,9 @@ class Settings extends Component {
     )
   }
 
-  getClipboard = user => {
-    if (user.apiKey) {
-      return `node -e "$(curl -s https://darkwaar.com/assets/node.js)" - --api-key=${user.apiKey}`
-    }
-
-    return null
-  }
-
-  onCopyApiUsage = event => {
-    const { user } = this.state
-    const clipboard = this.getClipboard(user)
-
-    copyTextToClipboard(clipboard)
-  }
-
   render() {
     const { env } = this.props
     const { user, isSaving } = this.state
-    const clipboard = this.getClipboard(user)
 
     return (
       <section className="section container-fluid">
