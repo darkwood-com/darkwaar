@@ -27,7 +27,7 @@ class Changelog extends Component {
                   const items = data.allChangelogYaml.edges
                   return items.map((item, index) => (
                     <li key={index}>
-                      <a
+                      {/*<a
                         href={
                           items[index + 1]
                             ? `https://github.com/darkwood-fr/darkwaar/compare/${
@@ -37,9 +37,9 @@ class Changelog extends Component {
                         }
                         target="_blank"
                         rel="noopener noreferrer"
-                      >
+                      >*/}
                         {item.node.tag}
-                      </a>
+                      {/*</a>*/}
                       <span className="float-right">{item.node.date}</span>
                       <p>{item.node.label}</p>
                       <hr />

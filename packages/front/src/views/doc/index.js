@@ -4,7 +4,7 @@ import { MDXRenderer } from 'gatsby-plugin-mdx'
 import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Navigation from './navigation'
-import { faEdit } from '@fortawesome/free-regular-svg-icons'
+// import { faEdit } from '@fortawesome/free-regular-svg-icons'
 import { pathTo } from '../../routes'
 import { MDXProvider } from '../../components'
 
@@ -24,7 +24,7 @@ class Index extends Component {
                 <MDXProvider>
                   <MDXRenderer>{doc.body}</MDXRenderer>
                 </MDXProvider>
-                <p>
+                {/*<p>
                   <a
                     href={`https://github.com/darkwood-fr/darkwaar/tree/master/docs/docs/${doc.parent.relativePath}`}
                     target="_blank"
@@ -32,7 +32,7 @@ class Index extends Component {
                   >
                     <FontAwesomeIcon icon={faEdit} /> Edit this page on GitHub
                   </a>
-                </p>
+                </p>*/}
               </div>
             </div>
 

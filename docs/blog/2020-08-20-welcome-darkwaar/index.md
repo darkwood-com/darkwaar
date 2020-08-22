@@ -1,12 +1,14 @@
 ---
 title: Welcome Darkwaar !
-date: 2018-11-30
+date: 2020-08-20
 author: Mathieu Ledru
 cover: images/cover.png
 coverSeo: images/cover.png
-coverAuthor: Shutterstock
-coverOriginalUrl: https://www.shutterstock.com/fr/image-photo/isolated-shot-water-splashing-24156562
+coverAuthor: Unsplash
+coverOriginalUrl: https://unsplash.com/photos/8Gl7Ew-q6D8
 tags: ["blog"]
 ---
+
+Will you be the darkest one at waar ?
 
 It’s a great pleasure to announce public and release of [darkwaar.com](https://darkwaar.com)

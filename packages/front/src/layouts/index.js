@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPowerOff } from '@fortawesome/free-solid-svg-icons'
-import { faGithub, faTwitter } from '@fortawesome/free-brands-svg-icons'
+import { /*faGithub,*/ faTwitter } from '@fortawesome/free-brands-svg-icons'
 import Helmet from 'react-helmet'
 import { Link, graphql, StaticQuery } from 'gatsby'
 import { connect } from 'react-redux'
@@ -289,7 +289,7 @@ class Header extends Component {
                 {changeLogTags.edges[0].node.tag}
               </Link>
             </li>
-            <li className="nav-item">
+            {/*<li className="nav-item">
               <a
                 className="nav-link"
                 href="https://github.com/darkwood-fr/darkwaar"
@@ -299,7 +299,7 @@ class Header extends Component {
               >
                 <FontAwesomeIcon icon={faGithub} />
               </a>
-            </li>
+            </li>*/}
             <li className="nav-item">
               <a
                 className="nav-link"
@@ -312,10 +312,10 @@ class Header extends Component {
               </a>
             </li>
             <li className="nav-item">
-              <a
+              <Link
                 className="nav-link"
-                href="#"
                 aria-label="Theme"
+                to={pathTo('home')}
                 onClick={this.onChangeTheme}
               >
                 {this.props.app.theme === 'light' && (
@@ -372,7 +372,7 @@ class Header extends Component {
                     <line x1="14" y1="1" x2="14" y2="4" />
                   </svg>
                 )}
-              </a>
+              </Link>
             </li>
             {!auth.isAuthenticated && (
               <li className="nav-item">
