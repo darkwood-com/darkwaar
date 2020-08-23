@@ -1,0 +1,26 @@
+{
+  "name": "@darkwaar-com/darkwaar-deploy",
+  "version": "0.0.1",
+  "description": "Darkwaar deploy",
+  "author": {
+    "name": "Mathieu Ledru",
+    "email": "matyo91@gmail.com"
+  },
+  "bugs": {
+    "url": "https://github.com/darkwood-fr/darkwaar/issues"
+  },
+  "homepage": "https://github.com/darkwood-fr/darkwaar/tree/master/library/darkwaar-deploy#readme",
+  "keywords": [
+    "darkwaar",
+    "darkwaar-deploy"
+  ],
+  "license": "CC BY-NC-ND",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/darkwood-fr/darkwaar.git",
+    "directory": "library/darkwaar-deploy"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

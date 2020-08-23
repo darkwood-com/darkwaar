@@ -1,12 +1,10 @@
 service: darkwaar
 
 custom:
-  preprod:
-    domain: darkwaar.com
   prod:
+    domain: darkwaar.com
+  preprod:
     domain: preprod.darkwaar.com
-  dev:
-    domain: dev.darkwaar.com
 
 provider:
   name: aws
@@ -17,35 +15,27 @@ provider:
     # More details here: https://www.serverless.com/framework/docs/providers/aws/events/http-api/
     cors: true
     payload: "2.0"
-  environment:
-    # Environment variables for Laravel
-    APP_ENV: production
-    APP_DEBUG: true # switch to false for production
-    # Bref needs to know that the vendor directory is inside "api/"
-    BREF_AUTOLOAD_PATH: api/vendor/autoload.php
 
 functions:
   api:
-    handler: api/public/index.php
+    handler: ./pack/${opt:stage}/api/public/index.php
     timeout: 28 # in seconds (API Gateway has a timeout of 29 seconds)
     layers:
       - ${bref:layer.php-74-fpm}
     events:
       - httpApi: '*'
+    package:
+      include:
+        - ./pack/${opt:stage}/api/**
 
 package:
-  # Files/directories to exclude from deployment on Lambda
+  individually: true
   exclude:
-    # We do not want to deploy the frontend to AWS Lambda
-    - front/**
-    # Exclude some Laravel directories from deployment
-    - api/node_modules/**
-    - api/public/storage
-    - api/storage/**
+    - ./**
 
 plugins:
   # We need to include the Bref plugin
-  - ./api/vendor/bref/bref
+  - ../api/vendor/bref/bref
 
 resources:
   Resources:

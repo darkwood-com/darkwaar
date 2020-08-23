@@ -1,0 +1,9 @@
+# pack
+/pack
+
+# dotenv
+/.env.api.*
+/.env.front.*
+
+# serverless
+/.serverless
