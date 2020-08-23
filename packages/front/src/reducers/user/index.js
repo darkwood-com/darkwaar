@@ -1,4 +1,4 @@
-import { COMMIT_UPDATE_SETTINGS } from './actions-types'
+import {COMMIT_UPDATE_SETTINGS} from './actions-types'
 
 const defaultState = {
   apiKey: null,

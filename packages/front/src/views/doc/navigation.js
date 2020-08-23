@@ -1,8 +1,8 @@
-import React, { Component } from 'react'
-import { Link } from 'gatsby'
-import { faBars } from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { pathTo } from '../../routes'
+import React, {Component} from 'react'
+import {Link} from 'gatsby'
+import {faBars} from '@fortawesome/free-solid-svg-icons'
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
+import {pathTo} from '../../routes'
 
 class Navigation extends Component {
   state = {
@@ -11,11 +11,11 @@ class Navigation extends Component {
   }
 
   onSearch = event => {
-    this.setState({ search: event.target.value })
+    this.setState({search: event.target.value})
   }
 
   onToggle = event => {
-    this.setState({ collapse: !this.state.collapse })
+    this.setState({collapse: !this.state.collapse})
   }
 
   onSubmit = event => {
@@ -24,7 +24,7 @@ class Navigation extends Component {
 
   itemPathTo = item => {
     const slug = item.link.slice(6)
-    return pathTo('doc', { slug: slug ? slug : null })
+    return pathTo('doc', {slug: slug ? slug : null})
   }
 
   isActive = (item, slug) => {
@@ -40,7 +40,7 @@ class Navigation extends Component {
         return words.indexOf(search) !== -1
       })
 
-      if(items.length > 0) {
+      if (items.length > 0) {
         value.push({
           ...section,
           items: items,
@@ -52,7 +52,7 @@ class Navigation extends Component {
   }
 
   render() {
-    const { docNav, slug } = this.props
+    const {docNav, slug} = this.props
 
     return (
       <div className="sidebar">
@@ -76,7 +76,7 @@ class Navigation extends Component {
             type="button"
             onClick={this.onToggle}
           >
-            <FontAwesomeIcon icon={faBars} />
+            <FontAwesomeIcon icon={faBars}/>
           </button>
         </form>
         <nav

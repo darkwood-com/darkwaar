@@ -1,21 +1,21 @@
-import React, { Component } from 'react'
-import { Link } from 'gatsby'
-import { MDXRenderer } from 'gatsby-plugin-mdx'
-import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import React, {Component} from 'react'
+import {Link} from 'gatsby'
+import {MDXRenderer} from 'gatsby-plugin-mdx'
+import {faArrowLeft, faArrowRight} from '@fortawesome/free-solid-svg-icons'
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import Navigation from './navigation'
 // import { faEdit } from '@fortawesome/free-regular-svg-icons'
-import { pathTo } from '../../routes'
-import { MDXProvider } from '../../components'
+import {pathTo} from '../../routes'
+import {MDXProvider} from '../../components'
 
 class Index extends Component {
   render() {
-    const { doc, docNav, previous, next } = this.props
+    const {doc, docNav, previous, next} = this.props
 
     return (
       <div className="container-fluid">
         <div className="row flex-xl-nowrap">
-          <Navigation docNav={docNav} slug={doc.fields.slug} />
+          <Navigation docNav={docNav} slug={doc.fields.slug}/>
           <section className="section col">
             <h3 className="mb-3">{doc.frontmatter.title}</h3>
 
@@ -42,11 +42,11 @@ class Index extends Component {
                   <Link
                     to={pathTo(
                       'doc',
-                      previous.fields.slug ? { slug: previous.fields.slug } : {}
+                      previous.fields.slug ? {slug: previous.fields.slug} : {}
                     )}
                     className="pull-left"
                   >
-                    <FontAwesomeIcon icon={faArrowLeft} />{' '}
+                    <FontAwesomeIcon icon={faArrowLeft}/>{' '}
                     {previous.frontmatter.title}
                   </Link>
                 )}
@@ -56,12 +56,12 @@ class Index extends Component {
                   <Link
                     to={pathTo(
                       'doc',
-                      next.fields.slug ? { slug: next.fields.slug } : {}
+                      next.fields.slug ? {slug: next.fields.slug} : {}
                     )}
                     className="pull-right"
                   >
                     {next.frontmatter.title}{' '}
-                    <FontAwesomeIcon icon={faArrowRight} />
+                    <FontAwesomeIcon icon={faArrowRight}/>
                   </Link>
                 )}
               </div>

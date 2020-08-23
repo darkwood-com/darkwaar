@@ -1,9 +1,9 @@
-import React, { Component } from 'react'
-import { navigate } from 'gatsby'
-import { pathTo } from '../../routes'
-import { facebookLogin } from '../../reducers/auth/actions'
-import { commitAddLog } from '../../reducers/logs/actions'
-import { connect } from 'react-redux'
+import React, {Component} from 'react'
+import {navigate} from 'gatsby'
+import {pathTo} from '../../routes'
+import {facebookLogin} from '../../reducers/auth/actions'
+import {commitAddLog} from '../../reducers/logs/actions'
+import {connect} from 'react-redux'
 
 class FacebookLogin extends Component {
   componentDidMount() {

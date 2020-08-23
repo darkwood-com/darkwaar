@@ -1,4 +1,4 @@
-import { COMMIT_SET_PAGE, COMMIT_SET_THEME } from './actions-types'
+import {COMMIT_SET_PAGE, COMMIT_SET_THEME} from './actions-types'
 
 export const commitSetPage = page => {
   return dispatch => {

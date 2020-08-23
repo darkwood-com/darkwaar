@@ -38,7 +38,8 @@ class ContactController extends AbstractController
         ContactService $contactService,
         Environment $twig,
         MailerInterface $mailer
-    ) {
+    )
+    {
         $this->contactService = $contactService;
         $this->twig = $twig;
         $this->mailer = $mailer;

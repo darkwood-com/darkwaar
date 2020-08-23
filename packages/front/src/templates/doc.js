@@ -1,10 +1,10 @@
 import React from 'react'
-import { Doc } from '../views'
-import { graphql } from 'gatsby'
-import { withPage } from '../helpers'
+import {Doc} from '../views'
+import {graphql} from 'gatsby'
+import {withPage} from '../helpers'
 
-export default ({ data, location, pageContext: { previous, next } }) => {
-  const { doc, docNav } = data
+export default ({data, location, pageContext: {previous, next}}) => {
+  const {doc, docNav} = data
 
   const DocPage = withPage(Doc, 'doc', {
     location: location,
@@ -12,7 +12,7 @@ export default ({ data, location, pageContext: { previous, next } }) => {
     description: doc.excerpt,
   })
 
-  return <DocPage doc={doc} docNav={docNav} previous={previous} next={next} />
+  return <DocPage doc={doc} docNav={docNav} previous={previous} next={next}/>
 }
 
 export const query = graphql`

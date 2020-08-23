@@ -1,5 +1,5 @@
 import React from 'react'
-import { StaticQuery, graphql } from 'gatsby'
+import {StaticQuery, graphql} from 'gatsby'
 import ArticleItem from './articleItem'
 
 const Blog = () => (
@@ -25,7 +25,7 @@ const Blog = () => (
           data.allMdx.edges.map((item, i) => (
             <div className="row mb-3" key={i}>
               <div className="col-md-6 offset-md-3">
-                <ArticleItem article={item.node} />
+                <ArticleItem article={item.node}/>
               </div>
             </div>
           ))

@@ -1,18 +1,18 @@
-import React, { Component } from 'react'
+import React, {Component} from 'react'
 import ace from 'brace'
 import 'brace/mode/javascript'
 import 'brace/mode/batchfile'
 import 'brace/mode/jsx'
 import 'brace/theme/solarized_dark'
 import 'brace/theme/solarized_light'
-import { connect } from 'react-redux'
+import {connect} from 'react-redux'
 
 /**
  * Component adapted from https://github.com/securingsincity/react-ace/blob/master/src/ace.tsx
  */
 class Ace extends Component {
   componentDidMount() {
-    const { value, mode, app, layout } = this.props
+    const {value, mode, app, layout} = this.props
 
     this.silent = false
 
@@ -43,7 +43,7 @@ class Ace extends Component {
       this.editor.setTheme('ace/theme/solarized_light')
     }
 
-    if(layout === 'text') {
+    if (layout === 'text') {
       this.editor.setOptions({
         maxLines: Infinity
       });
@@ -69,13 +69,13 @@ class Ace extends Component {
   }
 
   render() {
-    const { width, height, layout } = this.props
+    const {width, height, layout} = this.props
 
     return (
       <div
         ref={container => (this.container = container)}
         style={{
-          height:  height || layout !== 'text' ? height + 'px' : '100%',
+          height: height || layout !== 'text' ? height + 'px' : '100%',
           width: width ? width + 'px' : '100%',
         }}
       />

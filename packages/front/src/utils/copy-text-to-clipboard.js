@@ -7,7 +7,8 @@ export default text => {
 
   try {
     document.execCommand('copy')
-  } catch (err) {}
+  } catch (err) {
+  }
 
   document.body.removeChild(textArea)
 }

@@ -1,4 +1,4 @@
-import { Command, flags } from '@oclif/command';
+import {Command, flags} from '@oclif/command';
 import * as open from 'open';
 
 import config from '../config';
@@ -15,7 +15,7 @@ export class Start extends Command {
   ];
 
   static flags = {
-    help: flags.help({ char: 'h' }),
+    help: flags.help({char: 'h'}),
     open: flags.boolean({
       char: 'o',
       description: 'opens the UI automatically in browser',
@@ -28,7 +28,7 @@ export class Start extends Command {
   static openBrowser() {
     const url = `http://localhost:${config.get('port')}`;
 
-    open(url, { wait: true })
+    open(url, {wait: true})
       .catch((error: Error) => {
         console.log(`\nWas not able to open URL in browser. Please open manually by visiting:\n${url}\n`);
       });
@@ -54,7 +54,7 @@ export class Start extends Command {
     process.on('SIGTERM', Start.stopProcess);
     process.on('SIGINT', Start.stopProcess);
 
-    const { flags } = this.parse(Start);
+    const {flags} = this.parse(Start);
 
     // Wrap that the process does not close but we can still use async
     (async () => {

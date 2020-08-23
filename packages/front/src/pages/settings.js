@@ -1,8 +1,8 @@
 import React from 'react'
-import { Settings } from '../views'
-import { requireAuthentication, withPage } from '../helpers'
+import {Settings} from '../views'
+import {requireAuthentication, withPage} from '../helpers'
 
-export default ({ location }) => {
+export default ({location}) => {
   const AuthSettings = withPage(Settings, 'settings', {
     location: location,
     title: 'Settings',
@@ -10,5 +10,5 @@ export default ({ location }) => {
   })
   const AuthSettingsPage = requireAuthentication(AuthSettings)
 
-  return <AuthSettingsPage />
+  return <AuthSettingsPage/>
 }

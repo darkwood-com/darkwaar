@@ -1,15 +1,15 @@
-import React, { Component } from 'react'
-import { Link } from 'gatsby'
-import { MDXRenderer } from 'gatsby-plugin-mdx'
+import React, {Component} from 'react'
+import {Link} from 'gatsby'
+import {MDXRenderer} from 'gatsby-plugin-mdx'
 import Img from 'gatsby-image'
-import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { pathTo } from '../../routes'
-import { MDXProvider } from '../../components'
+import {faArrowLeft, faArrowRight} from '@fortawesome/free-solid-svg-icons'
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
+import {pathTo} from '../../routes'
+import {MDXProvider} from '../../components'
 
 class Article extends Component {
   render() {
-    const { article, previous, next } = this.props
+    const {article, previous, next} = this.props
 
     return (
       <section className="section container-fluid">
@@ -47,7 +47,7 @@ class Article extends Component {
                 height="36"
                 alt={article.frontmatter.author.name}
                 className="rounded-circle mx-2"
-                style={{ verticalAlign: 'middle' }}
+                style={{verticalAlign: 'middle'}}
               />
               <Link
                 to={pathTo('contributor', {
@@ -74,10 +74,10 @@ class Article extends Component {
           <div className="col-auto mr-auto">
             {previous && (
               <Link
-                to={pathTo('article', { slug: previous.fields.slug })}
+                to={pathTo('article', {slug: previous.fields.slug})}
                 className="pull-left"
               >
-                <FontAwesomeIcon icon={faArrowLeft} />{' '}
+                <FontAwesomeIcon icon={faArrowLeft}/>{' '}
                 {previous.frontmatter.title}
               </Link>
             )}
@@ -85,10 +85,10 @@ class Article extends Component {
           <div className="col-auto">
             {next && (
               <Link
-                to={pathTo('article', { slug: next.fields.slug })}
+                to={pathTo('article', {slug: next.fields.slug})}
                 className="pull-right"
               >
-                {next.frontmatter.title} <FontAwesomeIcon icon={faArrowRight} />
+                {next.frontmatter.title} <FontAwesomeIcon icon={faArrowRight}/>
               </Link>
             )}
           </div>

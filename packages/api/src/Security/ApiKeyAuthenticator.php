@@ -99,9 +99,9 @@ class ApiKeyAuthenticator extends AbstractGuardAuthenticator
      * @param mixed $credentials
      * @param UserProviderInterface $userProvider
      *
+     * @return UserInterface|null
      * @throws AuthenticationException
      *
-     * @return UserInterface|null
      */
     public function getUser($credentials, UserProviderInterface $userProvider)
     {

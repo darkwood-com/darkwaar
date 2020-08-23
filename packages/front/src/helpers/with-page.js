@@ -1,6 +1,6 @@
 import React from 'react'
-import { connect } from 'react-redux'
-import { commitSetPage } from '../reducers/app/actions'
+import {connect} from 'react-redux'
+import {commitSetPage} from '../reducers/app/actions'
 import Helmet from 'react-helmet'
 
 export default function withPage(Component, page, seo) {
@@ -10,7 +10,7 @@ export default function withPage(Component, page, seo) {
     }
 
     render() {
-      const { env } = this.props
+      const {env} = this.props
 
       return (
         <>
@@ -22,62 +22,62 @@ export default function withPage(Component, page, seo) {
                 href={`${env.url}${seo.location.pathname}`}
               />
               {seo.description && (
-                <meta name="description" content={seo.description} />
+                <meta name="description" content={seo.description}/>
               )}
 
-              <meta property="og:title" content={seo.title} />
+              <meta property="og:title" content={seo.title}/>
               {seo.description && (
-                <meta property="og:description" content={seo.description} />
+                <meta property="og:description" content={seo.description}/>
               )}
               <meta
                 property="og:url"
                 content={`${env.url}${seo.location.pathname}`}
               />
-              {seo.type && <meta property="og:type" content={seo.type} />}
-              {seo.title && <meta property="og:title" content={seo.title} />}
+              {seo.type && <meta property="og:type" content={seo.type}/>}
+              {seo.title && <meta property="og:title" content={seo.title}/>}
               {seo.image &&
-                typeof seo.image === 'string' && [
-                  <meta
-                    key="og:image"
-                    property="og:image"
-                    content={`${env.url}${seo.image}`}
-                  />,
-                  <meta
-                    key="og:image:width"
-                    property="og:image:width"
-                    content=""
-                  />,
-                  <meta
-                    key="og:image:height"
-                    property="og:image:height"
-                    content=""
-                  />,
-                ]}
+              typeof seo.image === 'string' && [
+                <meta
+                  key="og:image"
+                  property="og:image"
+                  content={`${env.url}${seo.image}`}
+                />,
+                <meta
+                  key="og:image:width"
+                  property="og:image:width"
+                  content=""
+                />,
+                <meta
+                  key="og:image:height"
+                  property="og:image:height"
+                  content=""
+                />,
+              ]}
               {seo.image &&
-                typeof seo.image !== 'string' && [
-                  <meta
-                    key="og:image"
-                    property="og:image"
-                    content={`${env.url}${seo.image.url}`}
-                  />,
-                  <meta
-                    key="og:image:width"
-                    property="og:image:width"
-                    content={seo.image.width}
-                  />,
-                  <meta
-                    key="og:image:height"
-                    property="og:image:height"
-                    content={seo.image.height}
-                  />,
-                ]}
+              typeof seo.image !== 'string' && [
+                <meta
+                  key="og:image"
+                  property="og:image"
+                  content={`${env.url}${seo.image.url}`}
+                />,
+                <meta
+                  key="og:image:width"
+                  property="og:image:width"
+                  content={seo.image.width}
+                />,
+                <meta
+                  key="og:image:height"
+                  property="og:image:height"
+                  content={seo.image.height}
+                />,
+              ]}
 
-              {seo.title && <meta name="twitter:title" content={seo.title} />}
+              {seo.title && <meta name="twitter:title" content={seo.title}/>}
               {seo.description && (
-                <meta name="twitter:description" content={seo.description} />
+                <meta name="twitter:description" content={seo.description}/>
               )}
               {seo.image && typeof seo.image === 'string' && (
-                <meta name="twitter:image" content={`${env.url}${seo.image}`} />
+                <meta name="twitter:image" content={`${env.url}${seo.image}`}/>
               )}
               {seo.image && typeof seo.image !== 'string' && (
                 <meta

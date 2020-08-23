@@ -1,6 +1,6 @@
-import React, { Component } from 'react'
-import { connect } from 'react-redux'
-import { fetchSettings } from '../reducers/user/actions'
+import React, {Component} from 'react'
+import {connect} from 'react-redux'
+import {fetchSettings} from '../reducers/user/actions'
 
 class UserManager extends Component {
   state = {
@@ -8,7 +8,7 @@ class UserManager extends Component {
   }
 
   componentDidMount() {
-    const { auth } = this.props
+    const {auth} = this.props
 
     if (auth.isAuthenticated) {
       this.onFetchUser(auth.token)
@@ -16,7 +16,7 @@ class UserManager extends Component {
   }
 
   componentDidUpdate(prevProps) {
-    const { auth } = this.props
+    const {auth} = this.props
 
     if (auth.token !== prevProps.auth.token && auth.isAuthenticated) {
       this.onFetchUser(auth.token)

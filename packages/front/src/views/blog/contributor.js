@@ -1,12 +1,12 @@
-import React, { Component } from 'react'
+import React, {Component} from 'react'
 import ArticleItem from './articleItem'
 import Img from 'gatsby-image'
-import { faTwitter } from '@fortawesome/free-brands-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {faTwitter} from '@fortawesome/free-brands-svg-icons'
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 
 class Contributor extends Component {
   render() {
-    const { contributor, articles } = this.props
+    const {contributor, articles} = this.props
 
     return (
       <section className="section container-fluid">
@@ -39,7 +39,7 @@ class Contributor extends Component {
                     rel="noopener noreferrer"
                     className="btn btn-social btn-twitter"
                   >
-                    <FontAwesomeIcon icon={faTwitter} /> {contributor.twitter}
+                    <FontAwesomeIcon icon={faTwitter}/> {contributor.twitter}
                   </a>
                 </div>
               </div>
@@ -52,7 +52,7 @@ class Contributor extends Component {
             {articles.edges.map((item, i) => (
               <div className="row mb-3" key={i}>
                 <div className="col-md-12">
-                  <ArticleItem article={item.node} />
+                  <ArticleItem article={item.node}/>
                 </div>
               </div>
             ))}

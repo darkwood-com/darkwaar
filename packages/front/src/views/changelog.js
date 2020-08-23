@@ -1,5 +1,5 @@
-import React, { Component } from 'react'
-import { StaticQuery, graphql } from 'gatsby'
+import React, {Component} from 'react'
+import {StaticQuery, graphql} from 'gatsby'
 
 class Changelog extends Component {
   render() {
@@ -38,11 +38,11 @@ class Changelog extends Component {
                         target="_blank"
                         rel="noopener noreferrer"
                       >*/}
-                        {item.node.tag}
+                      {item.node.tag}
                       {/*</a>*/}
                       <span className="float-right">{item.node.date}</span>
                       <p>{item.node.label}</p>
-                      <hr />
+                      <hr/>
                     </li>
                   ))
                 }}

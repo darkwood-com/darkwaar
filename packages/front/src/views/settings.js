@@ -1,9 +1,9 @@
-import React, { Component } from 'react'
-import { connect } from 'react-redux'
-import { faFacebookF, faGithub } from '@fortawesome/free-brands-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { facebookLoginUrl, githubLoginUrl } from '../reducers/auth/actions'
-import { updateSettings, commitUpdateSettings } from '../reducers/user/actions'
+import React, {Component} from 'react'
+import {connect} from 'react-redux'
+import {faFacebookF, faGithub} from '@fortawesome/free-brands-svg-icons'
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
+import {facebookLoginUrl, githubLoginUrl} from '../reducers/auth/actions'
+import {updateSettings, commitUpdateSettings} from '../reducers/user/actions'
 
 class Settings extends Component {
   state = {
@@ -19,43 +19,43 @@ class Settings extends Component {
   }
 
   componentDidMount() {
-    this.setState({ user: Object.assign({}, this.props.user) })
+    this.setState({user: Object.assign({}, this.props.user)})
   }
 
   componentDidUpdate(prevProps) {
     if (prevProps.user !== this.props.user) {
-      this.setState({ user: Object.assign({}, this.props.user) })
+      this.setState({user: Object.assign({}, this.props.user)})
     }
   }
 
   onUpdateFirstname = event => {
     this.setState({
-      user: { ...this.state.user, ...{ firstname: event.target.value } },
+      user: {...this.state.user, ...{firstname: event.target.value}},
     })
   }
 
   onUpdateLastname = event => {
     this.setState({
-      user: { ...this.state.user, ...{ lastname: event.target.value } },
+      user: {...this.state.user, ...{lastname: event.target.value}},
     })
   }
 
   onUpdateUsername = event => {
     this.setState({
-      user: { ...this.state.user, ...{ username: event.target.value } },
+      user: {...this.state.user, ...{username: event.target.value}},
     })
   }
 
   onUpdateApiKey = event => {
     this.setState({
-      user: { ...this.state.user, ...{ apiKey: event.target.value } },
+      user: {...this.state.user, ...{apiKey: event.target.value}},
     })
   }
 
   onRevokeFacebook = event => {
     event.preventDefault()
     this.setState(
-      { user: { ...this.state.user, ...{ facebookId: null } } },
+      {user: {...this.state.user, ...{facebookId: null}}},
       this.onUpdate
     )
   }
@@ -63,7 +63,7 @@ class Settings extends Component {
   onRevokeGithub = event => {
     event.preventDefault()
     this.setState(
-      { user: { ...this.state.user, ...{ githubId: null } } },
+      {user: {...this.state.user, ...{githubId: null}}},
       this.onUpdate
     )
   }
@@ -73,11 +73,11 @@ class Settings extends Component {
       event.preventDefault()
     }
 
-    this.setState({ isSaving: true }, () => {
+    this.setState({isSaving: true}, () => {
       this.props
         .dispatch(updateSettings(this.state.user, this.props.auth.token))
         .then(() => {
-          this.setState({ isSaving: false })
+          this.setState({isSaving: false})
         })
     })
   }
@@ -91,13 +91,13 @@ class Settings extends Component {
     }
 
     this.props.dispatch(
-      commitUpdateSettings({ ...this.props.user, ...{ apiKey: apiKey } })
+      commitUpdateSettings({...this.props.user, ...{apiKey: apiKey}})
     )
   }
 
   render() {
-    const { env } = this.props
-    const { user, isSaving } = this.state
+    const {env} = this.props
+    const {user, isSaving} = this.state
 
     return (
       <section className="section container-fluid">
@@ -158,55 +158,55 @@ class Settings extends Component {
             </div>
           </div>
           {env.facebookAppId && (
-          <div className="form-group row">
-            <label
-              htmlFor="settings_username"
-              className="col-sm-2 col-form-label"
-            >
-              Facebook
-            </label>
-            <div className="col-sm-10">
-              {(user.facebookId && (
-                <button
-                  onClick={this.onRevokeFacebook}
-                  className="btn btn-info"
-                >
-                  <FontAwesomeIcon icon={faFacebookF} /> Revoke Facebook
-                </button>
-              )) || (
-                <a
-                  href={facebookLoginUrl(env.facebookAppId)}
-                  className="btn btn-block btn-social btn-facebook"
-                >
-                  <FontAwesomeIcon icon={faFacebookF} /> Connect with Facebook
-                </a>
-              )}
+            <div className="form-group row">
+              <label
+                htmlFor="settings_username"
+                className="col-sm-2 col-form-label"
+              >
+                Facebook
+              </label>
+              <div className="col-sm-10">
+                {(user.facebookId && (
+                  <button
+                    onClick={this.onRevokeFacebook}
+                    className="btn btn-info"
+                  >
+                    <FontAwesomeIcon icon={faFacebookF}/> Revoke Facebook
+                  </button>
+                )) || (
+                  <a
+                    href={facebookLoginUrl(env.facebookAppId)}
+                    className="btn btn-block btn-social btn-facebook"
+                  >
+                    <FontAwesomeIcon icon={faFacebookF}/> Connect with Facebook
+                  </a>
+                )}
+              </div>
             </div>
-          </div>
           )}
           {env.githubAppId && (
-          <div className="form-group row">
-            <label
-              htmlFor="settings_username"
-              className="col-sm-2 col-form-label"
-            >
-              Github
-            </label>
-            <div className="col-sm-10">
-              {(user.githubId && (
-                <button onClick={this.onRevokeGithub} className="btn btn-info">
-                  <FontAwesomeIcon icon={faGithub} /> Revoke Github
-                </button>
-              )) || (
-                <a
-                  href={githubLoginUrl(env.githubAppId)}
-                  className="btn btn-block btn-social btn-github"
-                >
-                  <FontAwesomeIcon icon={faGithub} /> Connect with Github
-                </a>
-              )}
+            <div className="form-group row">
+              <label
+                htmlFor="settings_username"
+                className="col-sm-2 col-form-label"
+              >
+                Github
+              </label>
+              <div className="col-sm-10">
+                {(user.githubId && (
+                  <button onClick={this.onRevokeGithub} className="btn btn-info">
+                    <FontAwesomeIcon icon={faGithub}/> Revoke Github
+                  </button>
+                )) || (
+                  <a
+                    href={githubLoginUrl(env.githubAppId)}
+                    className="btn btn-block btn-social btn-github"
+                  >
+                    <FontAwesomeIcon icon={faGithub}/> Connect with Github
+                  </a>
+                )}
+              </div>
             </div>
-          </div>
           )}
           <div className="form-group row">
             <label

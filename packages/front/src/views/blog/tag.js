@@ -1,11 +1,11 @@
-import React, { Component } from 'react'
-import { pathTo } from '../../routes'
-import { Link } from 'gatsby'
+import React, {Component} from 'react'
+import {pathTo} from '../../routes'
+import {Link} from 'gatsby'
 import ArticleItem from './articleItem'
 
 class Tag extends Component {
   render() {
-    const { tag, articles } = this.props
+    const {tag, articles} = this.props
 
     return (
       <section className="section container-fluid">
@@ -27,7 +27,7 @@ class Tag extends Component {
             {articles.edges.map((item, i) => (
               <div className="row mb-3" key={i}>
                 <div className="col-md-6 offset-md-3">
-                  <ArticleItem article={item.node} />
+                  <ArticleItem article={item.node}/>
                 </div>
               </div>
             ))}

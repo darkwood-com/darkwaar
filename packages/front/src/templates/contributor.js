@@ -1,10 +1,10 @@
 import React from 'react'
-import { Contributor } from '../views'
-import { graphql } from 'gatsby'
-import { withPage } from '../helpers'
+import {Contributor} from '../views'
+import {graphql} from 'gatsby'
+import {withPage} from '../helpers'
 
-export default ({ data, location }) => {
-  const { contributor } = data
+export default ({data, location}) => {
+  const {contributor} = data
 
   const ContributorPage = withPage(Contributor, 'contributor', {
     location: location,
@@ -13,7 +13,7 @@ export default ({ data, location }) => {
     image: contributor.image.publicURL,
   })
 
-  return <ContributorPage contributor={contributor} articles={data.articles} />
+  return <ContributorPage contributor={contributor} articles={data.articles}/>
 }
 
 export const query = graphql`

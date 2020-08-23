@@ -62,7 +62,8 @@ class SecurityController extends AbstractController
         UserPasswordEncoderInterface $userPasswordEncoder,
         SessionInterface $session,
         HttpClientInterface $httpClient
-    ) {
+    )
+    {
         $this->appOauthFacebookId = $appOauthFacebookId;
         $this->appOauthGithubId = $appOauthGithubId;
         $this->appOauthGithubSecret = $appOauthGithubSecret;
@@ -73,6 +74,7 @@ class SecurityController extends AbstractController
         $this->session = $session;
         $this->httpClient = $httpClient;
     }
+
     /**
      * @Route("/api/login_check", name="api_login_check")
      *
@@ -122,7 +124,7 @@ class SecurityController extends AbstractController
         }
 
         $facebookId = $tokenUser['id'];
-        $facebookEmail = $tokenUser['id'].'@facebook.com';
+        $facebookEmail = $tokenUser['id'] . '@facebook.com';
 
         $user = $this->getUser();
         if ($user === null) {
@@ -207,7 +209,7 @@ class SecurityController extends AbstractController
         }
 
         $githubId = $tokenUser['id'];
-        $githubEmail = $tokenUser['id'].'@github.com';
+        $githubEmail = $tokenUser['id'] . '@github.com';
 
         $user = $this->getUser();
         if ($user === null) {

@@ -1,7 +1,7 @@
 import request from 'axios'
 import server from '../../utils/server'
-import { commitLogoutUser } from '../auth/actions'
-import { commitAddLog } from '../logs/actions'
+import {commitLogoutUser} from '../auth/actions'
+import {commitAddLog} from '../logs/actions'
 
 export const fetchConfig = token => {
   return dispatch => {
@@ -22,8 +22,7 @@ export const fetchConfig = token => {
 }
 export const updateConfig = (item, token) => {
   return dispatch => {
-    let data = {
-    }
+    let data = {}
 
     return request
       .put(`${server.getBaseUrl()}/api/config/set-config`, data, {

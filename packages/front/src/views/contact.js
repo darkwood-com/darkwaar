@@ -1,6 +1,6 @@
-import React, { Component } from 'react'
-import { connect } from 'react-redux'
-import { contact } from '../reducers/contact/actions'
+import React, {Component} from 'react'
+import {connect} from 'react-redux'
+import {contact} from '../reducers/contact/actions'
 
 class Contact extends Component {
   state = {
@@ -12,11 +12,11 @@ class Contact extends Component {
   }
 
   onChangeEmail = event => {
-    this.setState({ email: event.target.value })
+    this.setState({email: event.target.value})
   }
 
   onChangeMessage = event => {
-    this.setState({ message: event.target.value })
+    this.setState({message: event.target.value})
   }
 
   onSubmit = e => {
@@ -25,16 +25,16 @@ class Contact extends Component {
     let valid = true
     if (!this.state.email) {
       valid = false
-      this.setState({ emailError: true })
+      this.setState({emailError: true})
     } else {
-      this.setState({ emailError: false })
+      this.setState({emailError: false})
     }
 
     if (!this.state.message) {
       valid = false
-      this.setState({ messageError: true })
+      this.setState({messageError: true})
     } else {
-      this.setState({ messageError: false })
+      this.setState({messageError: false})
     }
 
     if (valid) {
@@ -42,14 +42,14 @@ class Contact extends Component {
         .dispatch(contact(this.state.email, this.state.message))
         .then(data => {
           if (data === true) {
-            this.setState({ sent: true })
+            this.setState({sent: true})
           }
         })
     }
   }
 
   render() {
-    const { email, emailError, message, messageError, sent } = this.state
+    const {email, emailError, message, messageError, sent} = this.state
 
     return (
       <section className="section container-fluid">
@@ -62,7 +62,7 @@ class Contact extends Component {
             {!sent && [
               <p className="text-center" key="say">
                 You got a question about Darkwaar, write more here
-                <br />
+                <br/>
                 It will be a pleasure to respond
               </p>,
               <form key="contactForm">

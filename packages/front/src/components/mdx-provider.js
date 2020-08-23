@@ -1,7 +1,7 @@
 import React from 'react'
-import { MDXProvider } from '@mdx-js/react'
-import { Link } from 'gatsby'
-import { Ace } from "../components";
+import {MDXProvider} from '@mdx-js/react'
+import {Link} from 'gatsby'
+import {Ace} from "../components";
 
 const components = {
   h1: props => (
@@ -28,13 +28,13 @@ const components = {
   Link,
   code: props => {
     let mode = ""
-    if(props.className === "language-bash") {
+    if (props.className === "language-bash") {
       mode = "batchfile"
     }
-    if(props.className === "language-javascript") {
+    if (props.className === "language-javascript") {
       mode = "javascript"
     }
-    if(props.className === "language-jsx") {
+    if (props.className === "language-jsx") {
       mode = "jsx"
     }
 

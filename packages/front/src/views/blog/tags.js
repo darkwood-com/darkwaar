@@ -1,10 +1,10 @@
 import React from 'react'
-import { pathTo } from '../../routes'
-import { Link } from 'gatsby'
-import { faTag } from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {pathTo} from '../../routes'
+import {Link} from 'gatsby'
+import {faTag} from '@fortawesome/free-solid-svg-icons'
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 
-const Tags = ({ tags }) => {
+const Tags = ({tags}) => {
   const orderedTags = Object.keys(tags).sort((tag1, tag2) => {
     return tags[tag1] > tags[tag2]
   })
@@ -18,11 +18,11 @@ const Tags = ({ tags }) => {
           <p>
             {orderedTags.map(tag => (
               <Link
-                to={pathTo('tag', { tag: tag })}
+                to={pathTo('tag', {tag: tag})}
                 key={tag}
                 className="btn btn-success mr-2"
               >
-                <FontAwesomeIcon icon={faTag} /> {tag} ({tags[tag]})
+                <FontAwesomeIcon icon={faTag}/> {tag} ({tags[tag]})
               </Link>
             ))}
           </p>

@@ -23,7 +23,8 @@ class ConfigController extends AbstractController
 
     public function __construct(
         ConfigService $configService
-    ) {
+    )
+    {
         $this->configService = $configService;
     }
 

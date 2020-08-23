@@ -16,9 +16,9 @@ import {
   Changelog,
 } from './views'
 
-import { compile } from 'path-to-regexp'
-import { requireAuthentication } from './helpers'
-import { matchPath } from './utils'
+import {compile} from 'path-to-regexp'
+import {requireAuthentication} from './helpers'
+import {matchPath} from './utils'
 
 const routes = {
   home: {

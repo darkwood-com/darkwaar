@@ -1,17 +1,17 @@
-import React, { Component } from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPowerOff } from '@fortawesome/free-solid-svg-icons'
-import { /*faGithub,*/ faTwitter } from '@fortawesome/free-brands-svg-icons'
+import React, {Component} from 'react'
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
+import {faPowerOff} from '@fortawesome/free-solid-svg-icons'
+import { /*faGithub,*/ faTwitter} from '@fortawesome/free-brands-svg-icons'
 import Helmet from 'react-helmet'
-import { Link, graphql, StaticQuery } from 'gatsby'
-import { connect } from 'react-redux'
-import routes, { pathTo } from '../routes'
-import { UserManager } from '../components'
-import { getNewLogs, commitReadLog } from '../reducers/logs/actions'
-import { commitLogoutUser } from '../reducers/auth/actions'
-import { isGranted } from '../reducers/user/actions'
-import { applyTheme, switchTheme } from '../reducers/app/actions'
-import { matchPath } from '../utils'
+import {Link, graphql, StaticQuery} from 'gatsby'
+import {connect} from 'react-redux'
+import routes, {pathTo} from '../routes'
+import {UserManager} from '../components'
+import {getNewLogs, commitReadLog} from '../reducers/logs/actions'
+import {commitLogoutUser} from '../reducers/auth/actions'
+import {isGranted} from '../reducers/user/actions'
+import {applyTheme, switchTheme} from '../reducers/app/actions'
+import {matchPath} from '../utils'
 
 class MessengerPlatform extends Component {
   render() {
@@ -40,7 +40,7 @@ class MessengerPlatform extends Component {
         </Helmet>
 
         {/* Load Facebook SDK for JavaScript */}
-        <div id="fb-root" />
+        <div id="fb-root"/>
 
         {/* Your customer chat code */}
         <div
@@ -55,7 +55,7 @@ class MessengerPlatform extends Component {
 
 class Alert extends Component {
   componentDidMount() {
-    const { alert, logs } = this.props
+    const {alert, logs} = this.props
 
     setTimeout(() => {
       this.props.dispatch(commitReadLog(logs[alert].id))
@@ -69,7 +69,7 @@ class Alert extends Component {
   }
 
   render() {
-    const { alert, logs } = this.props
+    const {alert, logs} = this.props
 
     return (
       <div
@@ -97,12 +97,12 @@ Alert = connect(state => ({
 
 class Alerts extends Component {
   render() {
-    const { logs } = this.props
+    const {logs} = this.props
 
     return (
       <>
         {Object.keys(logs).map((key, index) => (
-          <Alert key={key} alert={key} />
+          <Alert key={key} alert={key}/>
         ))}
       </>
     )
@@ -206,7 +206,7 @@ class Header extends Component {
   }
 
   render() {
-    const { auth, user, logo, changeLogTags } = this.props
+    const {auth, user, logo, changeLogTags} = this.props
     const active = this.onLocation(this.props.location)
 
     return (
@@ -299,7 +299,7 @@ class Header extends Component {
                 rel="noopener noreferrer"
                 aria-label="Twitter"
               >
-                <FontAwesomeIcon icon={faTwitter} />
+                <FontAwesomeIcon icon={faTwitter}/>
               </a>
             </li>
             <li className="nav-item">
@@ -320,15 +320,15 @@ class Header extends Component {
                     strokeLinejoin="round"
                     className="svg-inline--fa fa-w-16"
                   >
-                    <circle cx="12" cy="12" r="5" />
-                    <line x1="12" y1="1" x2="12" y2="3" />
-                    <line x1="12" y1="21" x2="12" y2="23" />
-                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
-                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
-                    <line x1="1" y1="12" x2="3" y2="12" />
-                    <line x1="21" y1="12" x2="23" y2="12" />
-                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
-                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+                    <circle cx="12" cy="12" r="5"/>
+                    <line x1="12" y1="1" x2="12" y2="3"/>
+                    <line x1="12" y1="21" x2="12" y2="23"/>
+                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+                    <line x1="1" y1="12" x2="3" y2="12"/>
+                    <line x1="21" y1="12" x2="23" y2="12"/>
+                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
                   </svg>
                 )}
                 {this.props.app.theme === 'dark' && (
@@ -342,7 +342,7 @@ class Header extends Component {
                     strokeLinejoin="round"
                     className="svg-inline--fa fa-w-16"
                   >
-                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
                   </svg>
                 )}
                 {this.props.app.theme === 'sepia' && (
@@ -356,11 +356,11 @@ class Header extends Component {
                     strokeLinejoin="round"
                     className="svg-inline--fa fa-w-16"
                   >
-                    <path d="M18 8h1a4 4 0 0 1 0 8h-1" />
-                    <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z" />
-                    <line x1="6" y1="1" x2="6" y2="4" />
-                    <line x1="10" y1="1" x2="10" y2="4" />
-                    <line x1="14" y1="1" x2="14" y2="4" />
+                    <path d="M18 8h1a4 4 0 0 1 0 8h-1"/>
+                    <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/>
+                    <line x1="6" y1="1" x2="6" y2="4"/>
+                    <line x1="10" y1="1" x2="10" y2="4"/>
+                    <line x1="14" y1="1" x2="14" y2="4"/>
                   </svg>
                 )}
               </Link>
@@ -382,7 +382,7 @@ class Header extends Component {
                   href="/logout"
                   onClick={this.onLogout}
                 >
-                  <FontAwesomeIcon icon={faPowerOff} />
+                  <FontAwesomeIcon icon={faPowerOff}/>
                 </a>
               </li>
             )}
@@ -461,7 +461,7 @@ class Layout extends Component {
   }
 
   render() {
-    const { app, env } = this.props
+    const {app, env} = this.props
 
     return (
       <StaticQuery
@@ -494,39 +494,39 @@ class Layout extends Component {
             }
           }
         `}
-        render={({ site: { siteMetadata }, logo, logoSeo, changeLogTags }) => (
+        render={({site: {siteMetadata}, logo, logoSeo, changeLogTags}) => (
           <>
             <Helmet>
-              <html lang="en" />
-              <body id={app.page} className={`theme-${app.theme}`} />
+              <html lang="en"/>
+              <body id={app.page} className={`theme-${app.theme}`}/>
 
-              <meta charSet="utf-8" />
+              <meta charSet="utf-8"/>
               <meta
                 name="viewport"
                 content="width=device-width, initial-scale=1, shrink-to-fit=no"
               />
               <title>{siteMetadata.title}</title>
-              <meta name="description" content={siteMetadata.description} />
+              <meta name="description" content={siteMetadata.description}/>
 
-              <meta property="og:title" content={siteMetadata.title} />
+              <meta property="og:title" content={siteMetadata.title}/>
               <meta
                 property="og:description"
                 content={siteMetadata.description}
               />
-              <meta property="og:url" content={env.url} />
-              <meta property="og:type" content="website" />
-              <meta property="og:locale" content="en" />
-              <meta property="og:site_name" content={siteMetadata.title} />
+              <meta property="og:url" content={env.url}/>
+              <meta property="og:type" content="website"/>
+              <meta property="og:locale" content="en"/>
+              <meta property="og:site_name" content={siteMetadata.title}/>
               <meta
                 property="og:image"
                 content={`${env.url}${logoSeo.publicURL}`}
               />
-              <meta property="og:image:width" content="512" />
-              <meta property="og:image:height" content="512" />
+              <meta property="og:image:width" content="512"/>
+              <meta property="og:image:height" content="512"/>
 
-              <meta name="twitter:card" content="summary_large_image" />
-              <meta name="twitter:site" content="darkwaar_io" />
-              <meta name="twitter:title" content={siteMetadata.title} />
+              <meta name="twitter:card" content="summary_large_image"/>
+              <meta name="twitter:site" content="darkwaar_io"/>
+              <meta name="twitter:title" content={siteMetadata.title}/>
               <meta
                 name="twitter:description"
                 content={siteMetadata.description}
@@ -536,18 +536,18 @@ class Layout extends Component {
                 content={`${env.url}${logo.publicURL}`}
               />
             </Helmet>
-            <UserManager location={this.props.location} />
+            <UserManager location={this.props.location}/>
             {[
               /*'production', 'preprod'*/
-            ].indexOf(env.env) !== -1 && <MessengerPlatform />}
+            ].indexOf(env.env) !== -1 && <MessengerPlatform/>}
             <Header
               location={this.props.location}
               logo={logo}
               changeLogTags={changeLogTags}
             />
-            <Alerts />
+            <Alerts/>
             {this.props.children}
-            <Footer />
+            <Footer/>
           </>
         )}
       />

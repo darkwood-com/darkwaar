@@ -1,8 +1,8 @@
 import React from 'react'
-import { Admin } from '../views'
-import { requireAuthentication, withPage } from '../helpers'
+import {Admin} from '../views'
+import {requireAuthentication, withPage} from '../helpers'
 
-export default ({ location }) => {
+export default ({location}) => {
   const AdminPage = withPage(Admin, 'admin', {
     location: location,
     title: 'Admin',
@@ -10,5 +10,5 @@ export default ({ location }) => {
   })
   const AuthAdminPage = requireAuthentication(AdminPage, 'ROLE_SUPER_ADMIN')
 
-  return <AuthAdminPage />
+  return <AuthAdminPage/>
 }

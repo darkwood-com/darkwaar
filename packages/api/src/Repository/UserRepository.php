@@ -46,8 +46,7 @@ class UserRepository extends ServiceEntityRepository
     public function findOneByEmailOrUsername(string $username): User
     {
         $qb = $this->createQueryBuilder('u')
-            ->select('u')
-        ;
+            ->select('u');
 
         $qb->andWhere($qb->expr()->orX('u.email = :username', 'u.username = :username'))
             ->setParameter('username', $username);
@@ -61,8 +60,7 @@ class UserRepository extends ServiceEntityRepository
     public function findOneByFacebookId(string $facebookId): ?User
     {
         $qb = $this->createQueryBuilder('u')
-            ->select('u')
-        ;
+            ->select('u');
 
         $qb->where('u.facebookId = :facebookId')
             ->setParameter('facebookId', $facebookId);
@@ -75,8 +73,7 @@ class UserRepository extends ServiceEntityRepository
     public function findOneByGithubId(string $githubId): ?User
     {
         $qb = $this->createQueryBuilder('u')
-            ->select('u')
-        ;
+            ->select('u');
 
         $qb->where('u.githubId = :githubId')
             ->setParameter('githubId', $githubId);

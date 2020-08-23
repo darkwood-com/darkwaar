@@ -1,11 +1,11 @@
-import React, { Component } from 'react'
-import { default as ReactSelect } from 'react-select'
-import { default as ReactCreatableSelect } from 'react-select/creatable'
-import { connect } from 'react-redux'
+import React, {Component} from 'react'
+import {default as ReactSelect} from 'react-select'
+import {default as ReactCreatableSelect} from 'react-select/creatable'
+import {connect} from 'react-redux'
 
 class Select extends Component {
   onChange = data => {
-    const { onChange, multiple } = this.props
+    const {onChange, multiple} = this.props
     if (onChange) {
       if (multiple === true) {
         onChange(
@@ -20,7 +20,7 @@ class Select extends Component {
   }
 
   render() {
-    const { value, options, edit, multiple, app } = this.props
+    const {value, options, edit, multiple, app} = this.props
     const customStyles = {
       light: {
         menu: provided => ({
@@ -104,7 +104,7 @@ class Select extends Component {
       selectValue = []
       if (value) {
         selectValue = value.map(data => {
-          return { value: data, label: data }
+          return {value: data, label: data}
         })
       }
     } else {

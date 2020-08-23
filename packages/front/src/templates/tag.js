@@ -1,10 +1,10 @@
 import React from 'react'
-import { Tag } from '../views'
-import { graphql } from 'gatsby'
-import { withPage } from '../helpers'
+import {Tag} from '../views'
+import {graphql} from 'gatsby'
+import {withPage} from '../helpers'
 
-export default ({ data, location, pageContext: { tag } }) => {
-  const { articles } = data
+export default ({data, location, pageContext: {tag}}) => {
+  const {articles} = data
 
   const TagPage = withPage(Tag, 'tag', {
     location: location,
@@ -12,7 +12,7 @@ export default ({ data, location, pageContext: { tag } }) => {
     description: tag,
   })
 
-  return <TagPage tag={tag} articles={articles} />
+  return <TagPage tag={tag} articles={articles}/>
 }
 
 export const query = graphql`

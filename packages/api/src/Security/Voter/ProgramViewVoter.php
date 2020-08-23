@@ -26,8 +26,7 @@ class ProgramViewVoter extends Voter
      */
     protected function voteOnAttribute(string $attribute, $subject, TokenInterface $token)
     {
-        if($subject->getPublic())
-        {
+        if ($subject->getPublic()) {
             return true;
         }
 

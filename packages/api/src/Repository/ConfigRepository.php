@@ -16,8 +16,7 @@ class ConfigRepository extends ServiceEntityRepository
     public function findOne(?int $id = null): ?Config
     {
         $qb = $this->createQueryBuilder('c')
-            ->select('c')
-        ;
+            ->select('c');
 
         if ($id) {
             $qb->andWhere('c.id = :id')->setParameter('id', $id);

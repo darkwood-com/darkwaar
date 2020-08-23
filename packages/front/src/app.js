@@ -1,10 +1,10 @@
 import React from 'react'
-import { combineReducers } from 'redux'
-import { Provider } from 'react-redux'
-import { app, auth, env, logs, user } from './reducers'
-import { createStore } from './utils'
-import { commitLoginUserSuccess } from './reducers/auth/actions'
-import { commitSetEnv } from './reducers/env/actions'
+import {combineReducers} from 'redux'
+import {Provider} from 'react-redux'
+import {app, auth, env, logs, user} from './reducers'
+import {createStore} from './utils'
+import {commitLoginUserSuccess} from './reducers/auth/actions'
+import {commitSetEnv} from './reducers/env/actions'
 
 let store = createStore(
   combineReducers({
@@ -31,4 +31,4 @@ if (typeof window !== `undefined`) {
   }
 }
 
-export default ({ element }) => <Provider store={store}>{element}</Provider>
+export default ({element}) => <Provider store={store}>{element}</Provider>

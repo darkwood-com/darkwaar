@@ -107,10 +107,10 @@ export const facebookLogin = (access_token, token = null) => {
           token === null
             ? {}
             : {
-                headers: {
-                  'Darkwaar-Authorization': `Bearer ${token}`,
-                },
-              }
+              headers: {
+                'Darkwaar-Authorization': `Bearer ${token}`,
+              },
+            }
         )
         .then(response => {
           try {
@@ -152,10 +152,10 @@ export const githubLogin = (code, token = null) => {
           token === null
             ? {}
             : {
-                headers: {
-                  'Darkwaar-Authorization': `Bearer ${token}`,
-                },
-              }
+              headers: {
+                'Darkwaar-Authorization': `Bearer ${token}`,
+              },
+            }
         )
         .then(response => {
           try {

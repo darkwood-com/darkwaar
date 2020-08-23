@@ -1,10 +1,10 @@
 import React from 'react'
-import { Article } from '../views'
-import { graphql } from 'gatsby'
-import { withPage } from '../helpers'
+import {Article} from '../views'
+import {graphql} from 'gatsby'
+import {withPage} from '../helpers'
 
-export default ({ data, location, pageContext: { previous, next } }) => {
-  const { article } = data
+export default ({data, location, pageContext: {previous, next}}) => {
+  const {article} = data
 
   const ArticlePage = withPage(Article, 'article', {
     location: location,
@@ -14,7 +14,7 @@ export default ({ data, location, pageContext: { previous, next } }) => {
     type: 'article',
   })
 
-  return <ArticlePage article={article} previous={previous} next={next} />
+  return <ArticlePage article={article} previous={previous} next={next}/>
 }
 
 export const query = graphql`

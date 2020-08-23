@@ -1,9 +1,9 @@
-import React, { Component } from 'react'
-import { navigate } from 'gatsby'
-import { pathTo } from '../../routes'
-import { githubLogin } from '../../reducers/auth/actions'
-import { commitAddLog } from '../../reducers/logs/actions'
-import { connect } from 'react-redux'
+import React, {Component} from 'react'
+import {navigate} from 'gatsby'
+import {pathTo} from '../../routes'
+import {githubLogin} from '../../reducers/auth/actions'
+import {commitAddLog} from '../../reducers/logs/actions'
+import {connect} from 'react-redux'
 
 class GithubLogin extends Component {
   componentDidMount() {

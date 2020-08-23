@@ -1,9 +1,9 @@
 import request from 'axios'
 import server from '../../utils/server'
 import uniq from 'lodash/uniq'
-import { COMMIT_UPDATE_SETTINGS } from './actions-types'
-import { commitLogoutUser } from '../auth/actions'
-import { commitAddLog } from '../logs/actions'
+import {COMMIT_UPDATE_SETTINGS} from './actions-types'
+import {commitLogoutUser} from '../auth/actions'
+import {commitAddLog} from '../logs/actions'
 
 export const fetchSettings = token => {
   return dispatch => {

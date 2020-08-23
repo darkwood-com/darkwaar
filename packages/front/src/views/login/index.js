@@ -1,16 +1,16 @@
-import React, { Component } from 'react'
-import { connect } from 'react-redux'
+import React, {Component} from 'react'
+import {connect} from 'react-redux'
 import {
   login,
   facebookLoginUrl,
   githubLoginUrl,
 } from '../../reducers/auth/actions'
-import { pathTo } from '../../routes'
-import { commitAddLog } from '../../reducers/logs/actions'
-import { Link, navigate } from 'gatsby'
-import { faSignInAlt, faUser, faKey } from '@fortawesome/free-solid-svg-icons'
-import { faFacebookF, faGithub } from '@fortawesome/free-brands-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {pathTo} from '../../routes'
+import {commitAddLog} from '../../reducers/logs/actions'
+import {Link, navigate} from 'gatsby'
+import {faSignInAlt, faUser, faKey} from '@fortawesome/free-solid-svg-icons'
+import {faFacebookF, faGithub} from '@fortawesome/free-brands-svg-icons'
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 
 class Login extends Component {
   state = {
@@ -19,11 +19,11 @@ class Login extends Component {
   }
 
   onChangeUsername = event => {
-    this.setState({ username: event.target.value })
+    this.setState({username: event.target.value})
   }
 
   onChangePassword = event => {
-    this.setState({ password: event.target.value })
+    this.setState({password: event.target.value})
   }
 
   onSubmit = e => {
@@ -41,8 +41,8 @@ class Login extends Component {
   }
 
   render() {
-    const { auth, env } = this.props
-    const { username, password } = this.state
+    const {auth, env} = this.props
+    const {username, password} = this.state
 
     return (
       <section className="section container-fluid">
@@ -55,7 +55,7 @@ class Login extends Component {
                   <div className="form-group">
                     <div className="input-group">
                       <div className="input-group-prepend">
-                        <div className="input-group-text"><FontAwesomeIcon icon={faUser} /></div>
+                        <div className="input-group-text"><FontAwesomeIcon icon={faUser}/></div>
                       </div>
                       <input
                         className="form-control"
@@ -70,7 +70,7 @@ class Login extends Component {
                   <div className="form-group">
                     <div className="input-group">
                       <div className="input-group-prepend">
-                        <div className="input-group-text"><FontAwesomeIcon icon={faKey} /></div>
+                        <div className="input-group-text"><FontAwesomeIcon icon={faKey}/></div>
                       </div>
                       <input
                         className="form-control"
@@ -103,19 +103,19 @@ class Login extends Component {
                       href={facebookLoginUrl(env.facebookAppId)}
                       className="btn btn-block btn-social btn-facebook"
                     >
-                      <FontAwesomeIcon icon={faFacebookF} /> Login with Facebook
+                      <FontAwesomeIcon icon={faFacebookF}/> Login with Facebook
                     </a>
                   </p>
                 )}
                 {env.githubAppId && (
-                <p>
-                  <a
-                    href={githubLoginUrl(env.githubAppId)}
-                    className="btn btn-block btn-social btn-github"
-                  >
-                    <FontAwesomeIcon icon={faGithub} /> Login with Github
-                  </a>
-                </p>
+                  <p>
+                    <a
+                      href={githubLoginUrl(env.githubAppId)}
+                      className="btn btn-block btn-social btn-github"
+                    >
+                      <FontAwesomeIcon icon={faGithub}/> Login with Github
+                    </a>
+                  </p>
                 )}
               </article>
             </div>
@@ -125,7 +125,7 @@ class Login extends Component {
                   className="glyphicon glyphicon-log-in register"
                   aria-hidden="true"
                 />{' '}
-                <FontAwesomeIcon icon={faSignInAlt} /> Register
+                <FontAwesomeIcon icon={faSignInAlt}/> Register
               </Link>
             </p>
           </div>

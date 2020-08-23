@@ -1,11 +1,10 @@
-import React, { Component } from 'react'
-import { fetchConfig, updateConfig } from '../reducers/config/actions'
-import { connect } from 'react-redux'
+import React, {Component} from 'react'
+import {fetchConfig, updateConfig} from '../reducers/config/actions'
+import {connect} from 'react-redux'
 
 class Admin extends Component {
   state = {
-    config: {
-    },
+    config: {},
     isSaving: false,
   }
 
@@ -22,11 +21,11 @@ class Admin extends Component {
       event.preventDefault()
     }
 
-    this.setState({ isSaving: true }, () => {
+    this.setState({isSaving: true}, () => {
       this.props
         .dispatch(updateConfig(this.state.config, this.props.auth.token))
         .then(() => {
-          this.setState({ isSaving: false })
+          this.setState({isSaving: false})
         })
     })
   }
