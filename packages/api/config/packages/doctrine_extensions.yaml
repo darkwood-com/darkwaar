@@ -1,5 +1,4 @@
 # services to handle doctrine extensions
-# import it in config.yml
 services:
   gedmo.listener.timestampable:
     class: Gedmo\Timestampable\TimestampableListener

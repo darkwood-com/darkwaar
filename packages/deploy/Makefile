@@ -22,13 +22,12 @@ install: clean ## install
 	cp .env.front.development ../front/.env.development
 
 pack: ensure-stage-variable ## STAGE=[prod|preprod] pack
-	rm -rf ./pack/$(STAGE)
-	mkdir -p ./pack/$(STAGE)
-
 	$(MAKE) pack-api
 	$(MAKE) pack-front
 
 pack-api: ensure-stage-variable
+	rm -rf ./pack/$(STAGE)/api
+	mkdir -p ./pack/$(STAGE)/api
 	cp -r ../api ./pack/$(STAGE)
 
 	rm -rf ./pack/$(STAGE)/api/.env.*
@@ -40,9 +39,11 @@ pack-api: ensure-stage-variable
 	(cd ./pack/$(STAGE)/api && openssl rsa -pubout -in ./config/jwt/private.pem -out ./config/jwt/public.pem -passin pass:darkwaar)
 
 	(cd ./pack/$(STAGE)/api && rm -rf var vendor)
-	(cd ./pack/$(STAGE)/api && $(COMPOSER) install)
+	(cd ./pack/$(STAGE)/api && $(COMPOSER) install --prefer-dist --optimize-autoloader --no-dev)
 
 pack-front: ensure-stage-variable
+	rm -rf ./pack/$(STAGE)/front
+	mkdir -p ./pack/$(STAGE)/front
 	cp -r ../front ./pack/$(STAGE)
 
 	rm -rf ./pack/$(STAGE)/front/.env.*
@@ -52,15 +53,15 @@ pack-front: ensure-stage-variable
 	(cd ./pack/$(STAGE)/front && npm install)
 	(cd ./pack/$(STAGE)/front && DOCS_PATH=../../../../../docs GATSBY_ACTIVE_ENV=local ./node_modules/.bin/gatsby build)
 
-deploy: ensure-stage-variable pack ## STAGE=[prod|preprod] deploy
+deploy: ensure-stage-variable ## STAGE=[prod|preprod] deploy
 	$(MAKE) deploy-api
 	$(MAKE) deploy-front
 
-deploy-api: ensure-stage-variable
+deploy-api: ensure-stage-variable pack-api
 	rm -rf .serverless
 	serverless deploy -s $(STAGE)
 
-deploy-front: ensure-stage-variable
+deploy-front: ensure-stage-variable pack-front
 	BUCKET_NAME=$$(serverless info -v -s $(STAGE) | grep StaticWebsiteBucket | sed s/StaticWebsiteBucket\:\ //g) && \
 	aws s3 sync ./pack/$(STAGE)/front/public s3://$$BUCKET_NAME/ && \
 	aws s3 cp "s3://$$BUCKET_NAME/index.html" "s3://$$BUCKET_NAME/index.html" --metadata-directive REPLACE --content-type "text/html" --cache-control max-age=0
