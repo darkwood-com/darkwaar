@@ -7,3 +7,6 @@
 
 # serverless
 /.serverless
+
+# composer
+/vendor

@@ -61,8 +61,11 @@ deploy-api: ensure-stage-variable pack-api
 	rm -rf .serverless
 	serverless deploy -s $(STAGE)
 
+	BUCKET_NAME=$$(serverless info -v -s $(STAGE) | grep ApiBucketOutput | sed s/ApiBucketOutput\:\ //g) && \
+	aws s3 sync ./pack/$(STAGE)/api/public s3://$$BUCKET_NAME/ --exclude="*.php" --cache-control "public, max-age=300"
+
 deploy-front: ensure-stage-variable pack-front
-	BUCKET_NAME=$$(serverless info -v -s $(STAGE) | grep StaticWebsiteBucket | sed s/StaticWebsiteBucket\:\ //g) && \
+	BUCKET_NAME=$$(serverless info -v -s $(STAGE) | grep FrontBucketOutput | sed s/FrontBucketOutput\:\ //g) && \
 	aws s3 sync ./pack/$(STAGE)/front/public s3://$$BUCKET_NAME/ && \
 	aws s3 cp "s3://$$BUCKET_NAME/index.html" "s3://$$BUCKET_NAME/index.html" --metadata-directive REPLACE --content-type "text/html" --cache-control max-age=0
 

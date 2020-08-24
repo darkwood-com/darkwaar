@@ -2,17 +2,17 @@ service: darkwaar
 
 custom:
   prod:
-    domain: darkwaar.com
+    front_domain: darkwaar.com
+    api_domain: api.darkwaar.com
   preprod:
-    domain: preprod.darkwaar.com
+    front_domain: preprod.darkwaar.com
+    api_domain: preprod-api.darkwaar.com
 
 provider:
   name: aws
   runtime: provided
   region: eu-west-3
   httpApi:
-    # Enable CORS for our API, from all domains, so that it can be called from our frontend app
-    # More details here: https://www.serverless.com/framework/docs/providers/aws/events/http-api/
     cors: true
     payload: "2.0"
   environment:
@@ -28,10 +28,10 @@ functions:
       - httpApi: '*'
     package:
       include:
-        - ./pack/${opt:stage}/api/**
-      exclude:
-        - ./pack/${opt:stage}/api/node_modules/**
-        - ./pack/${opt:stage}/api/tests/**
+        - './pack/${opt:stage}/api/**'
+        - '!./pack/${opt:stage}/api/node_modules/**'
+        - '!./pack/${opt:stage}/api/tests/**'
+        - '!./pack/${opt:stage}/api/var/**'
 
 package:
   individually: true
@@ -39,77 +39,135 @@ package:
     - ./**
 
 plugins:
-  # We need to include the Bref plugin
-  - ../api/vendor/bref/bref
+  - ./vendor/bref/bref
 
 resources:
   Resources:
 
-    # The S3 bucket that stores the static website
-    StaticWebsite:
+    FrontBucket:
       Type: AWS::S3::Bucket
-      # We do not define a `BucketName` property, a random name will be generated
       Properties:
         WebsiteConfiguration:
-          # Redirect all pages to index.html
           IndexDocument: 'index.html'
           ErrorDocument: 'index.html'
 
-    # The policy that makes the bucket publicly readable
-    StaticWebsitePolicy:
+    FrontBucketPolicy:
       Type: AWS::S3::BucketPolicy
       Properties:
-        Bucket: !Ref StaticWebsite # References the bucket we defined above
+        Bucket: !Ref FrontBucket
         PolicyDocument:
           Statement:
             - Effect: Allow
-              Principal: '*' # everyone
-              Action: s3:GetObject # to read
-              Resource: !Join ['/', [!GetAtt StaticWebsite.Arn, '*']] # things in the bucket
+              Principal: '*'
+              Action: s3:GetObject
+              Resource: !Join ['/', [!GetAtt FrontBucket.Arn, '*']]
 
-    WebsiteCDN:
+    ApiBucket:
+      Type: AWS::S3::Bucket
+
+    ApiBucketPolicy:
+      Type: AWS::S3::BucketPolicy
+      Properties:
+        Bucket: !Ref ApiBucket
+        PolicyDocument:
+          Statement:
+            - Effect: Allow
+              Principal: '*'
+              Action: s3:GetObject
+              Resource: !Join ['/', [!GetAtt ApiBucket.Arn, '*']]
+
+    FrontCDN:
       Type: AWS::CloudFront::Distribution
       Properties:
         DistributionConfig:
           Enabled: true
-          # Cheapest option by default (https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_DistributionConfig.html)
           PriceClass: PriceClass_100
-          # Enable http2 transfer for better performances
           HttpVersion: http2
-          # Origins are where CloudFront fetches content
           Origins:
-            - Id: StaticWebsite
-              DomainName: !Select [2, !Split ["/", !GetAtt StaticWebsite.WebsiteURL]]
+            - Id: FrontBucket
+              DomainName: !Select [2, !Split ["/", !GetAtt FrontBucket.WebsiteURL]]
               CustomOriginConfig:
-                # S3 websites only support HTTP
-                # (this is only accessed by CloudFront, visitors will be using HTTPS)
                 OriginProtocolPolicy: 'http-only'
           DefaultCacheBehavior:
-            TargetOriginId: StaticWebsite
+            TargetOriginId: FrontBucket
             AllowedMethods: [GET, HEAD]
             CachedMethods: [GET, HEAD]
             ForwardedValues:
-              # Do not forward the query string or cookies
               QueryString: 'false'
               Cookies:
                 Forward: none
             ViewerProtocolPolicy: redirect-to-https
-            Compress: true # Serve files with gzip for browsers that support it (https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/ServingCompressedFiles.html)
-          # When using a custom domain, uncomment the configuration below:
+            Compress: true
           Aliases:
-            - ${self:custom.${opt:stage}.domain}
+            - ${self:custom.${opt:stage}.front_domain}
           ViewerCertificate:
-            # ARN of the certificate created in ACM
-            # The ARN should look like this: 'arn:aws:acm:us-east-1:116536346254:certificate/322f12ee-1165-4bfa-a41f-08c932a2935d'
             AcmCertificateArn: arn:aws:acm:us-east-1:094932445011:certificate/13bde851-c131-4e58-87cc-889cb2bb3fe6
-            # See https://docs.aws.amazon.com/fr_fr/cloudfront/latest/APIReference/API_ViewerCertificate.html
-            SslSupportMethod: 'sni-only'
-            MinimumProtocolVersion: TLSv1.1_2016
+            SslSupportMethod: sni-only
+            MinimumProtocolVersion: TLSv1.2_2018
+
+    ApiCDN:
+      Type: AWS::CloudFront::Distribution
+      Properties:
+        DistributionConfig:
+          Enabled: true
+          PriceClass: PriceClass_100
+          HttpVersion: http2
+          Origins:
+            - Id: ApiBucket
+              DomainName: !GetAtt ApiBucket.RegionalDomainName
+              S3OriginConfig: {}
+            - Id: ApiLambda
+              DomainName: !Join ['.', [!Ref HttpApi, 'execute-api', !Ref AWS::Region, 'amazonaws.com']]
+              CustomOriginConfig:
+                OriginProtocolPolicy: 'https-only'
+          DefaultCacheBehavior:
+            AllowedMethods: [GET, HEAD, OPTIONS, PUT, POST, PATCH, DELETE]
+            TargetOriginId: ApiLambda
+            DefaultTTL: 0
+            MinTTL: 0
+            MaxTTL: 0
+            ForwardedValues:
+              QueryString: true
+              Cookies:
+                Forward: all
+              Headers:
+                - 'Accept'
+                - 'Accept-Language'
+                - 'Origin'
+                - 'Referer'
+            ViewerProtocolPolicy: redirect-to-https
+          CacheBehaviors:
+            - PathPattern: '*.*'
+              TargetOriginId: ApiBucket
+              AllowedMethods: [GET, HEAD]
+              ForwardedValues:
+                QueryString: 'false'
+                Cookies:
+                  Forward: none
+              ViewerProtocolPolicy: redirect-to-https
+              Compress: true
+          CustomErrorResponses:
+            - ErrorCode: 500
+              ErrorCachingMinTTL: 0
+            - ErrorCode: 504
+              ErrorCachingMinTTL: 0
+          Aliases:
+            - ${self:custom.${opt:stage}.api_domain}
+          ViewerCertificate:
+            AcmCertificateArn: arn:aws:acm:us-east-1:094932445011:certificate/13bde851-c131-4e58-87cc-889cb2bb3fe6
+            SslSupportMethod: sni-only
+            MinimumProtocolVersion: TLSv1.2_2018
 
   Outputs:
-    StaticWebsiteBucket:
+    FrontBucketOutput:
       Description: Name of the bucket that stores the static website.
-      Value: !Ref StaticWebsite
-    CloudFrontDomain:
+      Value: !Ref FrontBucket
+    ApiBucketOutput:
+      Description: Name of the bucket that stores the static website.
+      Value: !Ref ApiBucket
+    FrontCDNOutput:
       Description: CloudFront domain name.
-      Value: !GetAtt WebsiteCDN.DomainName
+      Value: !GetAtt FrontCDN.DomainName
+    ApiCDNOutput:
+      Description: CloudApi domain name.
+      Value: !GetAtt ApiCDN.DomainName
