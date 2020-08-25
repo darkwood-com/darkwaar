@@ -1,6 +1,6 @@
 {
   "type": "project",
-  "license": "CC BY-NC-ND",
+  "license": "CC-BY-NC-ND-4.0",
   "require": {
     "php": ">=7.2.5",
     "bref/bref": "^0.5.29"

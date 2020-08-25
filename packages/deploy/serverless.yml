@@ -133,6 +133,11 @@ resources:
               Headers:
                 - 'Accept'
                 - 'Accept-Language'
+                - 'Access-Control-Request-Headers'
+                - 'Access-Control-Request-Method'
+                - 'Authorization'
+                - 'Darkwaar-Authorization'
+                - 'Content-Type'
                 - 'Origin'
                 - 'Referer'
             ViewerProtocolPolicy: redirect-to-https

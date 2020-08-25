@@ -1,11 +1,12 @@
 {
   "type": "project",
-  "license": "CC BY-NC-ND",
+  "license": "CC-BY-NC-ND-4.0",
   "require": {
     "php": ">=7.2.5",
     "ext-ctype": "*",
     "ext-iconv": "*",
     "api-platform/core": "^2.1",
+    "bref/bref": "^0.5.29",
     "composer/package-versions-deprecated": "1.10.99.1",
     "doctrine/annotations": "^1.0",
     "doctrine/doctrine-bundle": "^1.6 || ^2.0",
