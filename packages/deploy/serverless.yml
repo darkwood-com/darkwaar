@@ -13,8 +13,21 @@ provider:
   runtime: provided
   region: eu-west-3
   httpApi:
-    cors: true
-    payload: "2.0"
+    cors:
+      allowedOrigins:
+        - '*'
+      allowedMethods: [GET, HEAD, OPTIONS, PUT, POST, PATCH, DELETE]
+      allowedHeaders:
+        - 'Accept'
+        - 'Accept-Language'
+        - 'Access-Control-Request-Headers'
+        - 'Access-Control-Request-Method'
+        - 'Authorization'
+        - 'Darkwaar-Authorization'
+        - 'Content-Type'
+        - 'Origin'
+        - 'Referer'
+    payload: '2.0'
   environment:
     BREF_AUTOLOAD_PATH: ./pack/${opt:stage}/api/vendor/autoload.php
 
@@ -85,7 +98,7 @@ resources:
           HttpVersion: http2
           Origins:
             - Id: FrontBucket
-              DomainName: !Select [2, !Split ["/", !GetAtt FrontBucket.WebsiteURL]]
+              DomainName: !Select [2, !Split ['/', !GetAtt FrontBucket.WebsiteURL]]
               CustomOriginConfig:
                 OriginProtocolPolicy: 'http-only'
           DefaultCacheBehavior:
