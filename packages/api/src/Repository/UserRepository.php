@@ -43,7 +43,7 @@ class UserRepository extends ServiceEntityRepository
         return $query->getOneOrNullResult();
     }
 
-    public function findOneByEmailOrUsername(string $username): User
+    public function findOneByEmailOrUsername(string $username): ?User
     {
         $qb = $this->createQueryBuilder('u')
             ->select('u');

@@ -28,7 +28,7 @@ pack: ensure-stage-variable ## STAGE=[prod|preprod] pack
 pack-api: ensure-stage-variable
 	rm -rf ./pack/$(STAGE)/api
 	mkdir -p ./pack/$(STAGE)/api
-	cp -r ../api ./pack/$(STAGE)
+	rsync -avr --exclude='vendor' --exclude='.env.*.local' --exclude='var' ../api ./pack/$(STAGE)
 
 	rm -rf ./pack/$(STAGE)/api/.env.*
 	cp .env.api.$(STAGE) ./pack/$(STAGE)/api/.env.local
@@ -44,7 +44,7 @@ pack-api: ensure-stage-variable
 pack-front: ensure-stage-variable
 	rm -rf ./pack/$(STAGE)/front
 	mkdir -p ./pack/$(STAGE)/front
-	cp -r ../front ./pack/$(STAGE)
+	rsync -avr --exclude='node_modules' --exclude='public' --exclude='.cache' --exclude='.env.*' ../front ./pack/$(STAGE)
 
 	rm -rf ./pack/$(STAGE)/front/.env.*
 	cp .env.front.$(STAGE) ./pack/$(STAGE)/front/.env.local
