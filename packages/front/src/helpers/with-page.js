@@ -93,7 +93,7 @@ export default function withPage(Component, page, seo) {
   }
 
   // preprod authentification
-  if(process.env.GATSBY_URL === 'https://localhost:8090' && ['login'].indexOf(page) === -1) {
+  if(process.env.GATSBY_URL === 'https://preprod.darkwaar.com' && ['login'].indexOf(page) === -1) {
     PageHelper = requireAuthentication(PageHelper, 'ROLE_SUPER_ADMIN')
   }
 
