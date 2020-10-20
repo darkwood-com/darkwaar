@@ -2,6 +2,7 @@
 
 namespace App\Security;
 
+use App\Entity\User as EntityUser;
 use App\Services\UserService;
 use Symfony\Component\Security\Core\User\UserProviderInterface;
 use Symfony\Component\Security\Core\User\User;
@@ -41,15 +42,19 @@ class ApiKeyUserProvider implements UserProviderInterface
 
     public function refreshUser(UserInterface $user)
     {
-        // this is used for storing authentication in the session
-        // but in this example, the token is sent in each request,
-        // so authentication can be stateless. Throwing this exception
-        // is proper to make things stateless
-        throw new UnsupportedUserException();
+        if (!$user instanceof EntityUser) {
+            throw new UnsupportedUserException(
+                sprintf('Instances of "%s" are not supported.', get_class($user))
+            );
+        }
+
+        $username = $user->getEmail();
+
+        return $this->loadUserByUsername($username);
     }
 
     public function supportsClass($class)
     {
-        return User::class === $class;
+        return EntityUser::class === $class;
     }
 }
