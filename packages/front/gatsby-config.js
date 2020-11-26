@@ -94,6 +94,7 @@ module.exports = {
                               nodes {
                                 id
                                 excerpt
+                                html
                                 fields {
                                   slug
                                 }
@@ -141,6 +142,7 @@ module.exports = {
                   description: node.excerpt,
                   url: `${siteMetadata.siteUrl}/blog/${node.fields.slug}`,
                   guid: `${siteMetadata.siteUrl}/blog/${node.fields.slug}`,
+                  custom_elements: [{ "content:encoded": node.html }],
                   categories: node.frontmatter.tags,
                   author: node.frontmatter.author.name,
                   date: node.frontmatter.date,
