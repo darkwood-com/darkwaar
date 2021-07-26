@@ -187,8 +187,9 @@ CardEngine="*res://addons/cardengine/core/card_engine_instance.gd"
 
 [display]
 
-window/size/width=1280
-window/size/height=720
+window/size/width=720
+window/size/height=1280
+window/handheld/orientation="portrait"
 
 [editor_plugins]
 
