@@ -1,12 +1,6 @@
-[gd_scene format=2]
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://src/scenes/board.gd" type="Script" id=1]
 
 [node name="Spatial" type="Spatial"]
-
-[node name="CSGBox" type="CSGBox" parent="."]
-width = 1.0
-height = 1.0
-depth = 1.0
-
-[node name="Camera" type="Camera" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 2 )
-fov = 107.67
+script = ExtResource( 1 )
