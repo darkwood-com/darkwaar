@@ -45,7 +45,7 @@
     "twig/twig": "^2.12|^3.0"
   },
   "require-dev": {
-    "doctrine/doctrine-fixtures-bundle": "^3.3",
+    "doctrine/doctrine-fixtures-bundle": "^1.0",
     "symfony/browser-kit": "^5.1",
     "symfony/css-selector": "^5.1",
     "symfony/debug-bundle": "^5.1",
@@ -98,6 +98,7 @@
   "conflict": {
     "symfony/symfony": "*"
   },
+  "minimum-stability": "dev",
   "extra": {
     "symfony": {
       "allow-contrib": false,
