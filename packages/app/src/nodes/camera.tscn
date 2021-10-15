@@ -3,4 +3,6 @@
 [ext_resource path="res://src/nodes/camera.gd" type="Script" id=1]
 
 [node name="Camera" type="Camera"]
+projection = 1
+size = 8.0
 script = ExtResource( 1 )

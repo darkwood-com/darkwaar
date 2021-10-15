@@ -16,7 +16,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Darkwaar"
-run/main_scene="res://src/scenes/Board.tscn"
+run/main_scene="res://src/scenes/board.tscn"
 config/icon="res://icon.png"
 
 [display]
