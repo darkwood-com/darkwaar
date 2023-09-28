@@ -24,18 +24,18 @@
 
     color: var(--secondary-color);
 
-    @include hover-focus {
+    /*@include hover-focus {
       color: var(--secondary-hover-color);
-    }
+    }*/
 
     &.active {
       color: var(--primary-color);
       border-bottom: $border-width solid var(--primary-color) !important;
 
-      @include hover-focus {
+      /*@include hover-focus {
         color: var(--primary-hover-color);
         border-bottom-color: var(--primary-hover-color) !important;
-      }
+      }*/
     }
   }
 }

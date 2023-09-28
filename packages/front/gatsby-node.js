@@ -119,7 +119,7 @@ exports.createPages = async ({graphql, actions, reporter}) => {
     docNav,
     docs,
   } = result.data
-  const docsBySlug = docs.nodes.reduce((value, doc) => {
+  /*const docsBySlug = docs.nodes.reduce((value, doc) => {
     value[`/docs${doc.fields.slug ? '/' + doc.fields.slug : ''}`] = doc
     return value
   }, {})
@@ -146,9 +146,9 @@ exports.createPages = async ({graphql, actions, reporter}) => {
         next,
       },
     })
-  })
+  })*/
 
-  const tags = {}
+  /*const tags = {}
   const contributorSet = new Set()
   articles.nodes.forEach((article, index) => {
     article.frontmatter.tags.forEach(tag => {
@@ -197,7 +197,7 @@ exports.createPages = async ({graphql, actions, reporter}) => {
         slug: contributor
       }
     });
-  });
+  });*/
 }
 
 const replacePath = _path => (_path === `/` ? _path : _path.replace(/\/$/, ``))

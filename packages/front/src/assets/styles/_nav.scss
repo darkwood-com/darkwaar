@@ -2,9 +2,9 @@
   .nav-link {
     color: var(--secondary-color);
 
-    @include hover-focus {
+    /*@include hover-focus {
       color: var(--secondary-hover-color);
-    }
+    }*/
   }
 }
 
@@ -18,17 +18,17 @@
     padding-bottom: $spacer;
     color: var(--secondary-color);
 
-    @include hover-focus {
+    /*@include hover-focus {
       color: var(--secondary-hover-color);
-    }
+    }*/
 
     &.active {
       color: var(--primary-color);
       border-top: $border-width solid var(--primary-color) !important;
 
-      @include hover-focus {
+      /*@include hover-focus {
         color: var(--primary-hover-color) !important;
-      }
+      }*/
     }
   }
 }

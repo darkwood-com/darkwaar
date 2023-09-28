@@ -21,7 +21,6 @@ export const query = graphql`
   query($id: String) {
     article: mdx(id: { eq: $id }) {
       body
-      timeToRead
       excerpt
       frontmatter {
         title

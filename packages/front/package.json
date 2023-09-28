@@ -85,6 +85,7 @@
     "react-select": "^5.7.5",
     "redux": "^4.2.1",
     "redux-thunk": "^2.4.2",
+    "sass-migrator": "^1.7.3",
     "vm-browserify": "^1.1.2"
   },
   "devDependencies": {

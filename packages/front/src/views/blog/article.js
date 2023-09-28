@@ -57,7 +57,6 @@ class Article extends Component {
                 {article.frontmatter.author.name}
               </Link>
               <span> - </span>
-              <i>{article.timeToRead} min read</i>
             </small>
           </div>
         </div>

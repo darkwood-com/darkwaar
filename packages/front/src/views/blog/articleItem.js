@@ -53,7 +53,6 @@ const ArticleItem = ({article}) => (
               {article.frontmatter.author.name}
             </Link>
             <span> - </span>
-            <i>{article.timeToRead} min read</i>
           </small>
         </div>
         <div className="col-auto">
@@ -105,7 +104,6 @@ export const query = graphql`
       tags
       date(formatString: "MMMM Do YYYY")
     }
-    timeToRead
   }
 `
 

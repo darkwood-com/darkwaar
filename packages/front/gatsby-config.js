@@ -1,5 +1,5 @@
 const projectPath = './'
-const docsPath = process.env.DOCS_PATH || '../../docs'
+const docsPath = process.env.DOCS_PATH || '../docs'
 const activeEnv = process.env.GATSBY_ACTIVE_ENV || process.env.NODE_ENV || 'development'
 
 console.log(`Using environment config: '${activeEnv}'`)
@@ -42,7 +42,7 @@ module.exports = {
       },
     },
     `gatsby-plugin-offline`,
-    {
+    /*{
       resolve: `gatsby-plugin-sitemap`,
       options: {
         serialize: ({site, allSitePage}) =>
@@ -62,8 +62,8 @@ module.exports = {
             }
           })
       }
-    },
-    {
+    },*/
+    /*{
       resolve: `gatsby-plugin-feed`,
       options: {
         query: `
@@ -157,7 +157,7 @@ module.exports = {
           },
         ],
       },
-    },
+    },*/
     `gatsby-transformer-yaml`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,

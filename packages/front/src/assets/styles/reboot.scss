@@ -6,9 +6,9 @@ body {
 a {
   color: var(--primary-color);
 
-  @include hover() {
+  /*@include hover() {
     color: var(--primary-hover-color);
-  }
+  }*/
 }
 
 input {

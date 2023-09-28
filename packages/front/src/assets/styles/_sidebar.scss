@@ -4,8 +4,8 @@
   position: relative;
   -webkit-overflow-scrolling: touch;
   width: 100%;
-  padding-right: $grid-gutter-width / 2;
-  padding-left: $grid-gutter-width / 2;
+  padding-right: $grid-gutter-width * 0.5;
+  padding-left: $grid-gutter-width * 0.5;
 
   @include media-breakpoint-up(sm) {
     position: sticky;
@@ -33,8 +33,8 @@
 }
 
 .sidebar-nav {
-  margin-right: -$grid-gutter-width / 2;
-  margin-left: -$grid-gutter-width / 2;
+  margin-right: -$grid-gutter-width * 0.5;
+  margin-left: -$grid-gutter-width * 0.5;
   padding: $spacer;
 
   ul {
@@ -53,7 +53,7 @@
     padding: 0;
     position: relative;
 
-    @include hover-focus {
+    /*@include hover-focus {
       span {
         color: var(--text-color) !important;
 
@@ -65,7 +65,7 @@
           }
         }
       }
-    }
+    }*/
 
     &.active {
       padding: 0 0 0 0.8rem;
@@ -93,18 +93,18 @@
       display: block;
       color: var(--secondary-color);
 
-      @include hover-focus {
+      /*@include hover-focus {
         color: var(--secondary-color);
-      }
+      }*/
 
       &.link {
         display: block;
         padding: .25em 0;
         text-decoration: none;
 
-        @include hover-focus {
+        /*@include hover-focus {
           color: var(--primary-color);
-        }
+        }*/
       }
     }
 
