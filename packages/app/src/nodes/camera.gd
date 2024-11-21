@@ -1,4 +1,4 @@
-extends Camera
+extends Camera3D
 
 enum Mode {ROTATE, TRANSLATE}
 
@@ -36,12 +36,12 @@ func _input(event):
 func _on_translate_begin(t: Vector2):
 	tween = Tween.new()
 	add_child(tween)
-	tween.connect("tween_completed", self, "_on_translate_end")
+	tween.connect("tween_completed", Callable(self, "_on_translate_end"))
 	tween.interpolate_property(
 		self,
-		"translation",
-		Vector3(self.translation.x, self.translation.y, self.translation.z),
-		Vector3(self.translation.x - t.y, self.translation.y, self.translation.z + t.x).round(),
+		"position",
+		Vector3(self.position.x, self.position.y, self.position.z),
+		Vector3(self.position.x - t.y, self.position.y, self.position.z + t.x).round(),
 		1,
 		Tween.TRANS_QUART,
 		Tween.EASE_IN_OUT
