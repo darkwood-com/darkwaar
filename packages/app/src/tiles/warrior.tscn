@@ -1,4 +1,0 @@
-[gd_scene format=2]
-
-[node name="Warrior" type="CSGSphere3D"]
-radius = 0.5
