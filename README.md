@@ -1,11 +1,45 @@
-DARKWAAR
-========
+# Darkwaar
 
-Will you be the darkest one at waar ?
+Will you be the darkest one at waar?
 
-More information at [https://darkwaar.com](https://darkwaar.com)
+## About
 
-License
--------
+Darkwaar is a strategy game project built with Symfony 7.2.
 
-<a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text" property="dct:title" rel="dct:type">Darkwaar</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="https://darkwaar.com" property="cc:attributionName" rel="cc:attributionURL">Mathieu Ledru</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a>.<br />Based on a work at <a xmlns:dct="http://purl.org/dc/terms/" href="https://github.com/darkwood-fr/darkwaar" rel="dct:source">https://github.com/darkwood-fr/darkwaar</a>.
+## Requirements
+
+- PHP 8.2 or higher
+- Composer
+- Node.js and npm
+
+## Installation
+
+1. Clone the repository
+2. Install PHP dependencies:
+   ```bash
+   composer install
+   ```
+3. Install Node.js dependencies:
+   ```bash
+   npm install
+   ```
+4. Build assets:
+   ```bash
+   npm run build
+   ```
+
+## Development
+
+Start the Symfony development server:
+```bash
+symfony serve
+```
+
+Or use Docker:
+```bash
+docker-compose up -d
+```
+
+## License
+
+MIT License

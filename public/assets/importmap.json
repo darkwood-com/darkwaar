@@ -1,0 +1,70 @@
+{
+    "app": {
+        "path": "\/assets\/app-X6Q6C_q.js",
+        "type": "js"
+    },
+    "\/assets\/bootstrap.js": {
+        "path": "\/assets\/bootstrap-0cLnqnm.js",
+        "type": "js"
+    },
+    "\/assets\/@symfony\/stimulus-bundle\/controllers.js": {
+        "path": "\/assets\/@symfony\/stimulus-bundle\/controllers-YgHRWBc.js",
+        "type": "js"
+    },
+    "\/assets\/controllers\/hello_controller.js": {
+        "path": "\/assets\/controllers\/hello_controller-8n7Sztl.js",
+        "type": "js"
+    },
+    "\/assets\/controllers\/csrf_protection_controller.js": {
+        "path": "\/assets\/controllers\/csrf_protection_controller-SVp8Dit.js",
+        "type": "js"
+    },
+    "\/assets\/styles\/app.css": {
+        "path": "\/assets\/styles\/app-IPsxtWR.css",
+        "type": "css"
+    },
+    "@hotwired\/stimulus": {
+        "path": "\/assets\/vendor\/@hotwired\/stimulus\/stimulus.index-S4zNcea.js",
+        "type": "js"
+    },
+    "@symfony\/stimulus-bundle": {
+        "path": "\/assets\/@symfony\/stimulus-bundle\/loader-V1GtHuK.js",
+        "type": "js"
+    },
+    "tom-select": {
+        "path": "\/assets\/vendor\/tom-select\/tom-select.index-TPK6we8.js",
+        "type": "js"
+    },
+    "@orchidjs\/sifter": {
+        "path": "\/assets\/vendor\/@orchidjs\/sifter\/sifter.index-zEuztG7.js",
+        "type": "js"
+    },
+    "@orchidjs\/unicode-variants": {
+        "path": "\/assets\/vendor\/@orchidjs\/unicode-variants\/unicode-variants.index-OoJoyLT.js",
+        "type": "js"
+    },
+    "tom-select\/dist\/css\/tom-select.default.css": {
+        "path": "\/assets\/vendor\/tom-select\/dist\/css\/tom-select.default-EUMPfwl.css",
+        "type": "css"
+    },
+    "@symfony\/ux-live-component": {
+        "path": "\/assets\/@symfony\/ux-live-component\/live_controller-P9iIXNe.js",
+        "type": "js"
+    },
+    "react": {
+        "path": "\/assets\/vendor\/react\/react.index-t-GuaAG.js",
+        "type": "js"
+    },
+    "react-dom": {
+        "path": "\/assets\/vendor\/react-dom\/react-dom.index-bZgx9iV.js",
+        "type": "js"
+    },
+    "react-dom\/client": {
+        "path": "\/assets\/vendor\/react-dom\/client-8-A1YvX.js",
+        "type": "js"
+    },
+    "scheduler": {
+        "path": "\/assets\/vendor\/scheduler\/scheduler.index-lYbMu6N.js",
+        "type": "js"
+    }
+}

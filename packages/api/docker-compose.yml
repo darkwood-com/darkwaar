@@ -1,8 +1,0 @@
-version: '3.8'
-services:
-  mysql:
-    container_name: darkwaar_mysql
-    hostname: darkwaar_mysql
-    image: mysql:5.7
-    environment:
-      - MYSQL_ROOT_PASSWORD=root

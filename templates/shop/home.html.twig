@@ -1,0 +1,114 @@
+{% extends 'shop/base.html.twig' %}
+
+{% block body %}
+    <section class="section container vh-100">
+        <div class="row h-100 align-items-center">
+            <div class="col-md-12 text-center">
+                <h1>Darkwaar</h1>
+                <p>Will you be the darkest one at waar?</p>
+
+                {#<div id="newsletter-optin" class="d-flex justify-content-center pt-md-5" data-controller="newsletter-subscription">
+                    <div data-newsletter-subscription-target="successMessage" class="d-none">
+                        <div class="alert alert-success alert-dismissible fade show" role="alert">
+                            <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Success:">
+                                <use xlink:href="#check-circle-fill" />
+                            </svg>
+                            <span data-newsletter-subscription-target="successText"></span>
+                            <br />
+                            Let's check <a href="{{ path('app_shop_tag', {tag: 'case-study'}) }}">some case studies</a> to get started.
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                    </div>
+
+                    <form data-newsletter-subscription-target="form" data-action="submit->newsletter-subscription#submit">
+                        <div class="input-group input-group-lg" data-newsletter-subscription-target="inputGroup">
+                            <input
+                                class="form-control"
+                                id="newsletter-email"
+                                type="email"
+                                name="email"
+                                data-newsletter-subscription-target="emailInput"
+                                placeholder="Email"
+                                required
+                            />
+                            <button
+                                type="submit"
+                                class="btn btn-primary input-group-text"
+                                data-newsletter-subscription-target="submitButton"
+                            >
+                                Subscribe to the newsletter
+                            </button>
+                        </div>
+                        <div data-newsletter-subscription-target="errorContainer" class="invalid-feedback d-none"></div>
+                    </form>
+                </div>#}
+            </div>
+        </div>
+    </section>
+
+    <section class="section container">
+        <div class="row py-5">
+            <div class="col-lg-12 text-center">
+                <h2>Features</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 py-md-5">
+                <h3>Strategy Games</h3>
+                <p>Engage in tactical gameplay and strategic thinking.</p>
+            </div>
+            <div class="col-lg-4 py-md-5">
+                <h3>Card Battles</h3>
+                <p>Build decks and battle with powerful cards.</p>
+            </div>
+            <div class="col-lg-4 py-md-5">
+                <h3>Puzzle Challenges</h3>
+                <p>Solve challenging puzzles and brain teasers.</p>
+            </div>
+            <div class="col-lg-4 py-md-5">
+                <h3>Community</h3>
+                <p>Join a vibrant gaming community.</p>
+            </div>
+            <div class="col-lg-4 py-md-5">
+                <h3>Mobile Ready</h3>
+                <p>Play on any device, anywhere.</p>
+            </div>
+            <div class="col-lg-4 py-md-5">
+                <h3>Open Source</h3>
+                <p>Darkwaar is open source and community driven.</p>
+            </div>
+        </div>
+    </section>
+
+    {#<section class="section container">
+        <div class="row py-5">
+            <div class="col-lg-12 text-center">
+                <h2>Self-host</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 py-md-5">
+                <h3>npx</h3>
+                <div class="code-editor" data-controller="code-editor">
+                    <pre><code class="language-bash">npx @uniflow-io/uniflow</code></pre>
+                </div>
+            </div>
+            <div class="col-lg-4 py-md-5">
+                <h3>npm</h3>
+                <div class="code-editor" data-controller="code-editor">
+                    <pre><code class="language-bash">npm install uniflow-io/uniflow -g
+uniflow</code></pre>
+                </div>
+            </div>
+            <div class="col-lg-4 py-md-5">
+                <h3>docker</h3>
+                <div class="code-editor" data-controller="code-editor">
+                    <pre><code class="language-bash">docker run --it --rm \
+           --name uniflow \
+           -p 8016:8016 \
+           uniflowio/uniflow</code></pre>
+                </div>
+            </div>
+        </div>
+    </section>#}
+{% endblock %}
