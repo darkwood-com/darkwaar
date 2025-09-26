@@ -59,7 +59,7 @@
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="https://github.com/darkwood-fr/darkwaar" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+            <a class="nav-link" href="https://github.com/darkwood-com/darkwaar" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
                 <twig:ux:icon name="bi:github" class="svg-inline--fa" />
             </a>
         </li>
@@ -94,7 +94,7 @@
 
 <!-- Mobile Bottom Navigation -->
 <ul class="nav nav-bar-bottom fixed-bottom justify-content-center d-flex d-md-none">
-    <li class="nav-item">
+    {#<li class="nav-item">
         <a class="nav-link{{ app.request.get('_route') == 'app_shop_flows' ? ' active' : '' }}" href="{{ path('app_shop_flows') }}">
             Games
         </a>
@@ -129,7 +129,7 @@
             Admin
         </a>
     </li>
-    {% endif %}
+    {% endif #}
     <li class="nav-item">
         <a class="nav-link{{ app.request.get('_route') starts with 'app_shop_blog' ? ' active' : '' }}" href="{{ path('app_shop_blog') }}">
             Blog
