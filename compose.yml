@@ -53,7 +53,7 @@ services:
         volumes:
             - mysql-data:/var/lib/mysql:rw
         ports:
-            - "8086:3306"
+            - "8087:3306"
     nginx:
         image: ghcr.io/sylius/sylius-nginx:latest
         depends_on:
