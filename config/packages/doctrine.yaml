@@ -55,8 +55,8 @@ when@prod: &doctrine_prod
         cache:
             pools:
                 doctrine.result_cache_pool:
-                    adapter: cache.app
+                    adapter: cache.adapter.filesystem
                 doctrine.system_cache_pool:
-                    adapter: cache.system
+                    adapter: cache.adapter.filesystem
 
 when@test_cached: *doctrine_prod

@@ -97,4 +97,24 @@
     array (
     ),
   ),
+  'tom-select/dist/css/tom-select.bootstrap4.css' => 
+  array (
+    'version' => '2.4.3',
+    'dependencies' => 
+    array (
+    ),
+    'extraFiles' => 
+    array (
+    ),
+  ),
+  'tom-select/dist/css/tom-select.bootstrap5.css' => 
+  array (
+    'version' => '2.4.3',
+    'dependencies' => 
+    array (
+    ),
+    'extraFiles' => 
+    array (
+    ),
+  ),
 );
