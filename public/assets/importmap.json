@@ -8,8 +8,20 @@
         "type": "js"
     },
     "\/assets\/@symfony\/stimulus-bundle\/controllers.js": {
-        "path": "\/assets\/@symfony\/stimulus-bundle\/controllers-RROKarj.js",
+        "path": "\/assets\/@symfony\/stimulus-bundle\/controllers-CR9F6KG.js",
         "type": "js"
+    },
+    "\/assets\/@symfony\/ux-autocomplete\/controller.js": {
+        "path": "\/assets\/@symfony\/ux-autocomplete\/controller-4yKT4My.js",
+        "type": "js"
+    },
+    "\/assets\/@symfony\/ux-live-component\/live_controller.js": {
+        "path": "\/assets\/@symfony\/ux-live-component\/live_controller-P9iIXNe.js",
+        "type": "js"
+    },
+    "\/assets\/@symfony\/ux-live-component\/live.min.css": {
+        "path": "\/assets\/@symfony\/ux-live-component\/live.min-FOtfHpc.css",
+        "type": "css"
     },
     "\/assets\/controllers\/hello_controller.js": {
         "path": "\/assets\/controllers\/hello_controller-8n7Sztl.js",
@@ -66,5 +78,13 @@
     "scheduler": {
         "path": "\/assets\/vendor\/scheduler\/scheduler.index-lYbMu6N.js",
         "type": "js"
+    },
+    "tom-select\/dist\/css\/tom-select.bootstrap4.css": {
+        "path": "\/assets\/vendor\/tom-select\/dist\/css\/tom-select.bootstrap4--gGdn36.css",
+        "type": "css"
+    },
+    "tom-select\/dist\/css\/tom-select.bootstrap5.css": {
+        "path": "\/assets\/vendor\/tom-select\/dist\/css\/tom-select.bootstrap5-PmntfHB.css",
+        "type": "css"
     }
 }

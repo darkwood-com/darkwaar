@@ -4,5 +4,10 @@
     "\/assets\/controllers\/hello_controller.js",
     "@symfony\/stimulus-bundle",
     "@hotwired\/stimulus",
-    "\/assets\/@symfony\/stimulus-bundle\/controllers.js"
+    "\/assets\/@symfony\/stimulus-bundle\/controllers.js",
+    "\/assets\/@symfony\/ux-autocomplete\/controller.js",
+    "tom-select\/dist\/css\/tom-select.default.css",
+    "\/assets\/@symfony\/ux-live-component\/live_controller.js",
+    "\/assets\/@symfony\/ux-live-component\/live.min.css",
+    "tom-select"
 ]
