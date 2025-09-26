@@ -30,7 +30,7 @@ use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Contracts\HttpClient\Exception\TransportExceptionInterface;
 use Symfony\Contracts\HttpClient\HttpClientInterface;
 
-#[Route('/api/v1/uniflow')]
+#[Route('/api/v1/darkwaar')]
 class SecurityController extends AbstractController
 {
     public function __construct(

@@ -22,7 +22,7 @@ export default class extends Controller {
         submitButton.textContent = 'Sending...';
 
         try {
-            const response = await fetch('/api/v1/uniflow/contact/create', {
+            const response = await fetch('/api/v1/darkwaar/contact/create', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

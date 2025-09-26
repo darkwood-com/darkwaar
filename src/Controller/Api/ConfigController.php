@@ -17,7 +17,7 @@ use Symfony\Component\Security\Core\Exception\AccessDeniedException;
 use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Component\Uid\Uuid;
 
-#[Route('/api/v1/uniflow/config')]
+#[Route('/api/v1/darkwaar/config')]
 class ConfigController extends AbstractController
 {
     public function __construct(protected ConfigService $configService) {}

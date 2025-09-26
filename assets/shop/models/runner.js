@@ -248,7 +248,7 @@ export default class Runner {
 
       const runner = {
         run: () => {
-          const code = flowsRef.current?.onCompile(index, ClientType.UNIFLOW)
+          const code = flowsRef.current?.onCompile(index, ClientType.DARKWAAR)
 
           const result = vm.runInContext(code || '', context, sharedContextKeys);
 

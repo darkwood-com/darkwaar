@@ -96,7 +96,7 @@ class SettingsManager {
   updateApiUsageDisplay(apiKey) {
     const apiUsageDisplay = document.getElementById('settings-apiKey');
     if (apiUsageDisplay && apiKey) {
-      apiUsageDisplay.value = `node -e "$(curl -s https://uniflow.io/assets/node.js)" - --api-key=${apiKey}`;
+      apiUsageDisplay.value = `node -e "$(curl -s https://darkwaar.io/assets/node.js)" - --api-key=${apiKey}`;
     }
   }
 
@@ -130,7 +130,7 @@ class SettingsManager {
   getApiUsageCommand() {
     const apiKey = this.getCurrentApiKey();
     if (apiKey) {
-      return `node -e "$(curl -s https://uniflow.io/assets/node.js)" - --api-key=${apiKey}`;
+      return `node -e "$(curl -s https://darkwaar.io/assets/node.js)" - --api-key=${apiKey}`;
     }
     return '';
   }

@@ -23,7 +23,7 @@ use Symfony\Component\Security\Core\Exception\AccessDeniedException;
 use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Component\Validator\Validator\ValidatorInterface;
 
-#[Route('/api/v1/uniflow/user')]
+#[Route('/api/v1/darkwaar/user')]
 class UserController extends AbstractController
 {
     public function __construct(

@@ -42,7 +42,7 @@ class LibraryController extends AbstractController
 
         $card['readme'] = file_get_contents(sprintf(
             __DIR__ . '/../../../library/%s/README.md',
-            str_replace('@uniflow-io/', '', $card['package'])
+            str_replace('@darkwaar-io/', '', $card['package'])
         ));
 
         return $this->render('shop/library/card.html.twig', [

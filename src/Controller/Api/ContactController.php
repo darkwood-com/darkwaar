@@ -17,7 +17,7 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Uid\Uuid;
 use Twig\Environment;
 
-#[Route('/api/v1/uniflow/contact')]
+#[Route('/api/v1/darkwaar/contact')]
 class ContactController extends AbstractController
 {
     public function __construct(protected ContactService $contactService, protected Environment $twig, protected MailerInterface $mailer) {}
@@ -45,7 +45,7 @@ class ContactController extends AbstractController
 
             $this->send('mails/contact.html.twig', [
                 'contact' => $contact,
-            ], 'matyo@uniflow.io', 'matyo@uniflow.io');
+            ], 'matyo@darkwaar.io', 'matyo@darkwaar.io');
 
             return new JsonResponse(true);
         }

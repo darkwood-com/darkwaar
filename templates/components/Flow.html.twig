@@ -1,15 +1,15 @@
 <div{{ attributes }}>
-{% if flow.flow == '@uniflow-io/uniflow-flow-function' %}
+{% if flow.flow == '@darkwaar-io/darkwaar-flow-function' %}
     <twig:Flow:FunctionFlow data="{{ flow.data }}" />
-{% elseif flow.flow == '@uniflow-io/uniflow-flow-object' %}
+{% elseif flow.flow == '@darkwaar-io/darkwaar-flow-object' %}
     <twig:Flow:ObjectFlow data="{{ flow.data }}" />
-{% elseif flow.flow == '@uniflow-io/uniflow-flow-prompt' %}
+{% elseif flow.flow == '@darkwaar-io/darkwaar-flow-prompt' %}
     <twig:Flow:PromptFlow data="{{ flow.data }}" />
-{% elseif flow.flow == '@uniflow-io/uniflow-flow-text' %}
+{% elseif flow.flow == '@darkwaar-io/darkwaar-flow-text' %}
     <twig:Flow:TextFlow data="{{ flow.data }}" />
-{% elseif flow.flow == '@uniflow-io/uniflow-flow-assets' %}
+{% elseif flow.flow == '@darkwaar-io/darkwaar-flow-assets' %}
     <twig:Flow:AssetsFlow data="{{ flow.data }}" />
-{% elseif flow.flow == '@uniflow-io/uniflow-flow-canvas' %}
+{% elseif flow.flow == '@darkwaar-io/darkwaar-flow-canvas' %}
     <twig:Flow:CanvasFlow data="{{ flow.data }}" />
 {% endif %}
 </div>

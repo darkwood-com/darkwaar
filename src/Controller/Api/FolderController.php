@@ -22,7 +22,7 @@ use Symfony\Component\Uid\Uuid;
 
 use function in_array;
 
-#[Route('/api/v1/uniflow/folder')]
+#[Route('/api/v1/darkwaar/folder')]
 class FolderController extends AbstractController
 {
     public function __construct(protected FolderService $folderService, protected UserService $userService) {}

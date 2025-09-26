@@ -10,44 +10,44 @@ import { ClientType } from './client-type';
 
 
 export const flows = {
-  '@uniflow-io/uniflow-flow-function': FunctionFlow,
-  '@uniflow-io/uniflow-flow-prompt': PromptFlow,
-  '@uniflow-io/uniflow-flow-text': TextFlow,
-  '@uniflow-io/uniflow-flow-assets': AssetsFlow,
-  '@uniflow-io/uniflow-flow-canvas': CanvasFlow,
-  '@uniflow-io/uniflow-flow-object': ObjectFlow,
+  '@darkwaar-io/darkwaar-flow-function': FunctionFlow,
+  '@darkwaar-io/darkwaar-flow-prompt': PromptFlow,
+  '@darkwaar-io/darkwaar-flow-text': TextFlow,
+  '@darkwaar-io/darkwaar-flow-assets': AssetsFlow,
+  '@darkwaar-io/darkwaar-flow-canvas': CanvasFlow,
+  '@darkwaar-io/darkwaar-flow-object': ObjectFlow,
 }
 
 export const flowsNames = {
-  '@uniflow-io/uniflow-flow-function': 'Function Flow',
-  '@uniflow-io/uniflow-flow-prompt': 'Prompt Flow',
-  '@uniflow-io/uniflow-flow-text': 'Text Flow',
-  '@uniflow-io/uniflow-flow-assets': 'Assets Flow',
-  '@uniflow-io/uniflow-flow-canvas': 'Canvas Flow',
-  '@uniflow-io/uniflow-flow-object': 'Object Flow',
+  '@darkwaar-io/darkwaar-flow-function': 'Function Flow',
+  '@darkwaar-io/darkwaar-flow-prompt': 'Prompt Flow',
+  '@darkwaar-io/darkwaar-flow-text': 'Text Flow',
+  '@darkwaar-io/darkwaar-flow-assets': 'Assets Flow',
+  '@darkwaar-io/darkwaar-flow-canvas': 'Canvas Flow',
+  '@darkwaar-io/darkwaar-flow-object': 'Object Flow',
 }
 
 export const flowsClients = {
-  '@uniflow-io/uniflow-flow-function': [
-      ClientType.UNIFLOW,
+  '@darkwaar-io/darkwaar-flow-function': [
+      ClientType.DARKWAAR,
       ClientType.PHP,
       ClientType.NODE,
       ClientType.VSCODE,
     ],
-  '@uniflow-io/uniflow-flow-prompt': [
-      ClientType.UNIFLOW,
+  '@darkwaar-io/darkwaar-flow-prompt': [
+      ClientType.DARKWAAR,
     ],
-  '@uniflow-io/uniflow-flow-text': [
-      ClientType.UNIFLOW,
+  '@darkwaar-io/darkwaar-flow-text': [
+      ClientType.DARKWAAR,
     ],
-  '@uniflow-io/uniflow-flow-assets': [
-      ClientType.UNIFLOW,
+  '@darkwaar-io/darkwaar-flow-assets': [
+      ClientType.DARKWAAR,
     ],
-  '@uniflow-io/uniflow-flow-canvas': [
-    ClientType.UNIFLOW,
+  '@darkwaar-io/darkwaar-flow-canvas': [
+    ClientType.DARKWAAR,
   ],
-  '@uniflow-io/uniflow-flow-object': [
-    ClientType.UNIFLOW,
+  '@darkwaar-io/darkwaar-flow-object': [
+    ClientType.DARKWAAR,
   ],
 }
 

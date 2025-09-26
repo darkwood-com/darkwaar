@@ -16,27 +16,27 @@ final class Search
     {
         return [
             /*[
-                'key' => 'uniflow-flow-assets',
+                'key' => 'darkwaar-flow-assets',
                 'label' => 'Assets',
             ],
             [
-                'key' => 'uniflow-flow-canvas',
+                'key' => 'darkwaar-flow-canvas',
                 'label' => 'Canvas',
             ],*/
             [
-                'key' => 'uniflow-flow-function',
+                'key' => 'darkwaar-flow-function',
                 'label' => 'Function',
             ],
             [
-                'key' => 'uniflow-flow-object',
+                'key' => 'darkwaar-flow-object',
                 'label' => 'Object',
             ],
             /*[
-                'key' => 'uniflow-flow-prompt',
+                'key' => 'darkwaar-flow-prompt',
                 'label' => 'Prompt',
             ],*/
             [
-                'key' => 'uniflow-flow-text',
+                'key' => 'darkwaar-flow-text',
                 'label' => 'Text',
             ],
         ];
