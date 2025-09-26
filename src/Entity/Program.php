@@ -33,7 +33,7 @@ use Symfony\Component\Validator\Constraints as Assert;
         new Delete(),
     ]
 )]
-#[ORM\Table(name: 'uniflow_program')]
+#[ORM\Table(name: 'darkwaar_program')]
 #[ORM\Index(name: 'index_search', columns: ['slug', 'name'])]
 #[ORM\UniqueConstraint(name: 'unique_slug', columns: ['user_id', 'slug'])]
 #[ORM\Entity(repositoryClass: ProgramRepository::class)]
@@ -74,14 +74,14 @@ class Program implements Stringable
      */
     #[Assert\NotBlank(message: "The client can't be empty")]
     #[ORM\ManyToMany(targetEntity: Client::class, inversedBy: 'programs', cascade: ['persist'])]
-    #[ORM\JoinTable(name: 'uniflow_program_client')]
+    #[ORM\JoinTable(name: 'darkwaar_program_client')]
     protected Collection $clients;
 
     /**
      * @var Collection<int, Tag>
      */
     #[ORM\ManyToMany(targetEntity: Tag::class, inversedBy: 'programs', cascade: ['persist'])]
-    #[ORM\JoinTable(name: 'uniflow_program_tag')]
+    #[ORM\JoinTable(name: 'darkwaar_program_tag')]
     protected Collection $tags;
 
     #[Groups(['program'])]

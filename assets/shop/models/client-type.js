@@ -1,5 +1,5 @@
 export const ClientType = {
-    UNIFLOW: 'uniflow',
+    DARKWAAR: 'darkwaar',
     PHP: 'php',
     NODE: 'node',
     VSCODE: 'vscode',

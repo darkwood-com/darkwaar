@@ -1,5 +1,5 @@
 api_platform:
-    title: Uniflow API
+    title: Darkwaar API
     version: 1.0.0
     mapping:
         paths:
@@ -14,14 +14,14 @@ api_platform:
             apiKey:
                 name: Authorization
                 type: header
-    
+
     # Enable OpenAPI documentation
     openapi:
         contact:
-            name: Uniflow API Team
-            url: https://uniflow.io
-            email: contact@uniflow.io
-        termsOfService: https://uniflow.io/terms
+            name: Darkwaar API Team
+            url: https://darkwaar.io
+            email: contact@darkwaar.io
+        termsOfService: https://darkwaar.io/terms
         license:
             name: MIT
             url: https://opensource.org/licenses/MIT

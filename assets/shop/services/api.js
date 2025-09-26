@@ -8,7 +8,7 @@ class Api {
   }
 
   getBaseUrl() {
-    return `${this.baseUrl}/api/v1/uniflow`;
+    return `${this.baseUrl}/api/v1/darkwaar`;
   }
 
   getQuery(query) {

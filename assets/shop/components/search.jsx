@@ -5,7 +5,7 @@ import { faDotCircle } from '@fortawesome/free-regular-svg-icons';
 
 const Search = (props) => {
   const { programFlows } = props;
-  const [search, setSearch] = useState('@uniflow-io/uniflow-flow-function');
+  const [search, setSearch] = useState('@darkwaar-io/darkwaar-flow-function');
 
   const onSubmit = (event) => {
     event.preventDefault();

@@ -10,7 +10,7 @@ services:
             # You can move these environment variables to your .env.local file
             APP_ENV: ${ENV:-dev}
             APP_SECRET: EDITME
-            DATABASE_URL: "mysql://root@mysql/uniflow_%kernel.environment%"
+            DATABASE_URL: "mysql://root@mysql/darkwaar_%kernel.environment%"
             MAILER_DSN: smtp://mailhog:1025
             MESSENGER_TRANSPORT_DSN: doctrine://default
             SYLIUS_MESSENGER_TRANSPORT_MAIN_DSN: doctrine://default
@@ -53,7 +53,7 @@ services:
         volumes:
             - mysql-data:/var/lib/mysql:rw
         ports:
-            - "8086:3306"
+            - "8087:3306"
     nginx:
         image: ghcr.io/sylius/sylius-nginx:latest
         depends_on:

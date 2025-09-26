@@ -17,12 +17,12 @@ const FlowHeader = (props) => {
       <div className="col">
         <div className="btn-toolbar" role="toolbar" aria-label="flow actions">
           <div className="btn-group-sm" role="group">
-            {props.clients.indexOf('uniflow') !== -1 && props.isPlaying === false && (
+            {props.clients.indexOf('darkwaar') !== -1 && props.isPlaying === false && (
               <button type="button" className="btn btn-primary" onClick={props.onPlay}>
                 <FontAwesomeIcon icon={faPlay} />
               </button>
             )}
-            {props.clients.indexOf('uniflow') !== -1 && props.isPlaying === true && (
+            {props.clients.indexOf('darkwaar') !== -1 && props.isPlaying === true && (
               <div className="btn-group" role="group">
                 <button type="button" className="btn btn-warning">
                   <span

@@ -137,7 +137,7 @@ class Program extends React.Component {
 
   onUpdateProgramFlows = () => {
     let clients = [
-        ClientType.UNIFLOW,
+        ClientType.DARKWAAR,
         ClientType.PHP,
         ClientType.NODE,
         ClientType.VSCODE,
@@ -446,18 +446,18 @@ class Program extends React.Component {
 
   getPhpClipboard = () => {
     if (this.state.user.apiKey) {
-      return `php -e "$(curl -s https://uniflow.io/assets/php.php)" bin/console app:client --api-key=${this.state.user.apiKey} ${this.state.program.slug}`;
+      return `php -e "$(curl -s https://darkwaar.io/assets/php.php)" bin/console app:client --api-key=${this.state.user.apiKey} ${this.state.program.slug}`;
     }
 
-    return `php -e "$(curl -s https://uniflow.io/assets/php.php)" bin/console app:client --api-key={your-api-key} ${this.state.program.slug}`;
+    return `php -e "$(curl -s https://darkwaar.io/assets/php.php)" bin/console app:client --api-key={your-api-key} ${this.state.program.slug}`;
   };
 
   getNodeClipboard = () => {
     if (this.state.user.apiKey) {
-      return `node -e "$(curl -s https://uniflow.io/assets/node.js)" - --api-key=${this.state.user.apiKey} ${this.state.program.slug}`;
+      return `node -e "$(curl -s https://darkwaar.io/assets/node.js)" - --api-key=${this.state.user.apiKey} ${this.state.program.slug}`;
     }
 
-    return `node -e "$(curl -s https://uniflow.io/assets/node.js)" - --api-key={your-api-key} ${this.state.program.slug}`;
+    return `node -e "$(curl -s https://darkwaar.io/assets/node.js)" - --api-key={your-api-key} ${this.state.program.slug}`;
   };
 
   onCopyPhpUsage = (event) => {
@@ -550,7 +550,7 @@ class Program extends React.Component {
                 onChange={this.onChangeClients}
                 multiple={true}
                 options={[
-                  { value: ClientType.UNIFLOW, label: 'Uniflow' },
+                  { value: ClientType.DARKWAAR, label: 'Darkwaar' },
                   { value: ClientType.PHP, label: 'PHP' },
                   { value: ClientType.NODE, label: 'Node' },
                   { value: ClientType.VSCODE, label: 'VSCode' }
@@ -626,7 +626,7 @@ class Program extends React.Component {
           </div>
         </form>
         {program.clients.map((client) => {
-            if (client === ClientType.UNIFLOW) {
+            if (client === ClientType.DARKWAAR) {
             return (
                 <div key={`client-${client}`} className="row mb-3">
                     <div className="col-sm-10 offset-sm-2">

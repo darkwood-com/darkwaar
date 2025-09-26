@@ -16,7 +16,7 @@ use Gedmo\Mapping\Annotation\Slug;
 use Stringable;
 use Symfony\Component\Validator\Constraints as Assert;
 
-#[ORM\Table(name: 'uniflow_folder')]
+#[ORM\Table(name: 'darkwaar_folder')]
 #[ORM\Index(name: 'index_search', columns: ['slug', 'name'])]
 #[ORM\Entity(repositoryClass: FolderRepository::class)]
 #[ORM\HasLifecycleCallbacks]

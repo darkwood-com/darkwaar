@@ -148,14 +148,14 @@ const PromptFlow = flow((props, ref) => {
 
   let choices = {},
     clientKeyChoices = []
-  if (clients.length === 1 && clients.indexOf('uniflow') !== -1) {
+  if (clients.length === 1 && clients.indexOf('darkwaar') !== -1) {
     clientKeyChoices = [PromptChoiceType.STRING, PromptChoiceType.TEXT, PromptChoiceType.FILE]
   } else if (clients.length === 1 && clients.indexOf('node') !== -1) {
     clientKeyChoices = [PromptChoiceType.STRING]
   } else if (
     clients.length === 2 &&
     clients.indexOf('node') !== -1 &&
-    clients.indexOf('uniflow') !== -1
+    clients.indexOf('darkwaar') !== -1
   ) {
     clientKeyChoices = [PromptChoiceType.STRING]
   }

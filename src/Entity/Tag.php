@@ -15,7 +15,7 @@ use Stringable;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Validator\Constraints as Assert;
 
-#[ORM\Table(name: 'uniflow_tag')]
+#[ORM\Table(name: 'darkwaar_tag')]
 #[ORM\Index(name: 'index_search_tags', columns: ['name'])]
 #[ORM\Entity(repositoryClass: TagRepository::class)]
 #[UniqueEntity('name', message: "The name '{{ value }}' is already taken.")]

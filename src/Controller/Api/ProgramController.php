@@ -26,7 +26,7 @@ use Symfony\Component\Uid\Uuid;
 use function count;
 use function in_array;
 
-#[Route('/api/v1/uniflow/program')]
+#[Route('/api/v1/darkwaar/program')]
 class ProgramController extends AbstractController
 {
     public function __construct(

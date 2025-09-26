@@ -10,9 +10,9 @@
                     <li>
                         <a href="
                             {% if loop.index < changelogItems|length %}
-                                https://github.com/uniflow-io/uniflow/compare/{{ changelogItems[loop.index].tag }}...{{ item.tag }}
+                                https://github.com/darkwaar-io/darkwaar/compare/{{ changelogItems[loop.index].tag }}...{{ item.tag }}
                             {% else %}
-                                https://github.com/uniflow-io/uniflow/releases/tag/{{ item.tag }}
+                                https://github.com/darkwaar-io/darkwaar/releases/tag/{{ item.tag }}
                             {% endif %}
                         " target="_blank" rel="noopener noreferrer">
                             {{ item.tag }}

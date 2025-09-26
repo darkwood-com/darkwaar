@@ -10,7 +10,7 @@ use App\Repository\ConfigRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
-#[ORM\Table(name: 'uniflow_config')]
+#[ORM\Table(name: 'darkwaar_config')]
 #[ORM\Entity(repositoryClass: ConfigRepository::class)]
 #[ORM\HasLifecycleCallbacks]
 class Config
