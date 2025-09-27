@@ -22,7 +22,7 @@ nix: ## Start nix development
 	$(NIX)
 
 php-serve: ## Start php server
-	(cd public && php -d memory_limit=-1 -S localhost:8016)
+	(cd public && php -d memory_limit=-1 -S localhost:8017)
 
 php-asset:
 	# php -d memory_limit=-1 bin/console importmap:install
