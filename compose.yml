@@ -80,7 +80,7 @@ services:
     mailhog:
         # do not use in production!
         ports:
-            - "8025:8025"
+            - "8026:8025"
         image: mailhog/mailhog:latest
     phpmyadmin:
         image: phpmyadmin/phpmyadmin:latest
@@ -91,7 +91,7 @@ services:
             PMA_USER: root
             PMA_PASSWORD: ""
         ports:
-            - "8081:80"
+            - "8082:80"
 
 volumes:
     mysql-data:
